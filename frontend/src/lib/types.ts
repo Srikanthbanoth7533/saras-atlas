@@ -52,7 +52,9 @@ export interface DigitalTwinTopology {
 export interface SkuInventoryItem {
   sku_id: string;
   sku_code: string;
-  product_name: string;
+  product_name?: string;
+  product_title?: string;
+  category?: string;
   retail_price: number;
   total_on_hand: number;
   total_reserved: number;

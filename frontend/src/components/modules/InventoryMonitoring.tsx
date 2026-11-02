@@ -17,8 +17,10 @@ export function InventoryMonitoring({ inventory }: InventoryMonitoringProps) {
 
   const filteredItems = items.filter(
     (item) =>
-      item.sku_code.toLowerCase().includes(search.toLowerCase()) ||
-      item.product_name.toLowerCase().includes(search.toLowerCase())
+      item.sku_code?.toLowerCase().includes(search.toLowerCase()) ||
+      (item.product_name || item.product_title || "")
+        .toLowerCase()
+        .includes(search.toLowerCase())
   );
 
   return (
@@ -211,7 +213,7 @@ export function InventoryMonitoring({ inventory }: InventoryMonitoringProps) {
                 return (
                   <tr key={sku.sku_id} className="hover:bg-white/[0.02] transition-colors">
                     <td className="py-2 px-3 font-bold text-cyan-400">{sku.sku_code}</td>
-                    <td className="py-2 px-3 text-slate-200">{sku.product_name}</td>
+                    <td className="py-2 px-3 text-slate-200">{sku.product_name || sku.product_title || "Apex Technical Garment"}</td>
                     <td className="py-2 px-3 text-slate-300">{formatCurrency(sku.retail_price)}</td>
                     <td className="py-2 px-3 text-white font-bold">{formatNumber(sku.total_on_hand)}</td>
                     <td className="py-2 px-3 text-slate-300">{formatNumber(sku.total_available)}</td>
