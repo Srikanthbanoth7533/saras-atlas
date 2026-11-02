@@ -22,3 +22,4 @@ def evaluate_forecasting(
 ):
     forecaster = AdvancedForecaster()
     return forecaster.evaluate_forecast(series_type=series_type, horizon_days=horizon_days)
+

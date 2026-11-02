@@ -11,3 +11,4 @@ __all__ = [
     "IntelligenceResponse",
     "DecisionIntelligenceEngine",
 ]
+

@@ -17,3 +17,4 @@ def get_security_audit_trail(
     user: User = Depends(require_roles(UserRole.ADMIN, UserRole.AUDITOR, UserRole.CFO)),
 ):
     return read_audit_logs(limit=limit)
+

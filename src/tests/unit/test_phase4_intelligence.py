@@ -175,3 +175,4 @@ def test_executive_report_pdf_and_csv_generation():
     assert "SECTION 1: STRATEGIC KPI SCORECARD" in csv_text
     assert "SECTION 2: ROOT CAUSE ANALYSIS" in csv_text
     assert len(csv_text) > 1000
+

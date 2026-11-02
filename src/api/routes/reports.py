@@ -39,3 +39,4 @@ def export_csv_report(user: User = Depends(get_current_user)):
             "Content-Disposition": 'attachment; filename="saras_atlas_executive_resilience_report.csv"'
         },
     )
+

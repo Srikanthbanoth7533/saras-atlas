@@ -50,3 +50,4 @@ class AuditLogEntry(BaseModel):
     status: str  # SUCCESS, FAILURE, FORBIDDEN
     client_ip: Optional[str] = "127.0.0.1"
     details: Optional[dict] = Field(default_factory=dict)
+

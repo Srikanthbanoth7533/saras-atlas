@@ -18,3 +18,4 @@ def trace_root_cause(
 ):
     tracer = RootCauseTracer()
     return tracer.trace_disruption(disruption_id=disruption_id)
+

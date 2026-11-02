@@ -19,3 +19,4 @@ def get_explainable_recommendations(
     user: User = Depends(get_current_user),
 ):
     return ExplainableRecommendationBuilder.build_standard_dossier(scenario_id=scenario_id)
+

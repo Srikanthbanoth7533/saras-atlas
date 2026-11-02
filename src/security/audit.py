@@ -69,3 +69,4 @@ def read_audit_logs(limit: int = 50) -> List[AuditLogEntry]:
                 except Exception:
                     continue
     return entries
+

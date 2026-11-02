@@ -153,3 +153,4 @@ def require_roles(*allowed_roles: UserRole):
             )
         return current_user
     return role_checker
+

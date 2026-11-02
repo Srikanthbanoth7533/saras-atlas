@@ -394,3 +394,57 @@
   - Captured 5 high-resolution screenshots via headless Microsoft Edge at 1440x960 into `docs/screenshots/` and copied to conversation artifact directory (`12_intelligence_center.png`, `13_root_cause_analysis.png`, `14_forecasting_studio.png`, `15_executive_reporting.png`, `16_enterprise_connectors.png`).
   - Total cumulative project expenditure: **₹0.00**. Background daemons running: **0**.
 - **Outcome:** Phase 4 fully completed, verified, documented, and ready for master gate acceptance. All 5 phases of SARAS ATLAS are now 100% implemented.
+
+### Entry 036: Final Integrated Acceptance Audit, End-to-End Workflow Verification, Numerical Validation, and Performance Benchmarking
+- **Date/Time:** 2026-11-03T01:05:00+05:30
+- **Action:**
+  - Executed full platform regression test suites:
+    - Pytest full regression suite (`pytest src/tests/`): **33 of 33 tests passed** in 30.93s.
+    - Phase 2 integration suite (`scripts/test_phase2_integration.py`): **9 of 9 checkpoints passed**.
+    - Phase 3 integration suite (`scripts/test_phase3_integration.py`): **10 of 10 checkpoints passed**.
+    - Phase 4 integration suite (`scripts/test_phase4_integration.py`): **12 of 12 checkpoints passed**.
+    - SQLite backup & recovery test (`scripts/backup_and_recovery.py`): `PRAGMA integrity_check` returned `ok`, snapshot restored with identical row counts.
+  - Authored and executed `scripts/verify_full_e2e_workflow.py` validating the 14-step Vanguard Apparel business disruption scenario against live FastAPI endpoints and SQLite database:
+    1. Ingestion of mock transaction rows with atomic rollback token `RB-A3C38A5EA8`.
+    2. Data quality health audit: 99.8% health score (Grade A+), 100% completeness, validity, and uniqueness.
+    3. Digital twin graph construction: 5 warehouse nodes, 3 carrier corridors for Vanguard Apparel Co.
+    4. Disruption injection: +21-day supplier delay on PO-9012, +28% ocean freight surcharge, +45% viral demand spike on `APEX-JKT`.
+    5. Operational risk sentinels: 3 active risk indicators detected ($367.2K exposure).
+    6. Discrete-event impact propagation: 10 stockout days, 13,572 fulfilled orders, 1,968 unfulfilled lost orders, 87.3% fill rate, $905,133.32 contribution margin.
+    7. Multi-scenario batch execution: 10 scenarios evaluated in 26.6 ms (376.6 scn/s) with 0–60d sensitivity sweep.
+    8. Empirical ML forecasting: Ridge Regressor out-of-time evaluation (WAPE 3.08%, MAE 22.29 units), KS test showing no distribution drift ($D=0.1560, p=0.6534$).
+    9. Dynamic mitigation policy evaluation: Evaluated 6 policies; recommended Ad Throttling & Capital Conservation; dual-sourcing 90% Shenzhen / 10% Saigon avoiding $312,187.50 loss.
+    10. Mathematical optimization: Google OR-Tools SCIP solver converged to `OPTIMAL` in 7.00 ms ($39,997.50 capital, 0 stockout days, restoring $1,034,977.64 contribution margin).
+    11. AI explainability & RCA: 8-dimension decision dossier generated; RCA DAG traced 5 loss segments ($224,500 total).
+    12. Two-Man Governance: COO & CFO dual digital signature executed with 64-character SHA-256 seal (`c51867dd5cdb93605b7b79b6fae72a0c...`).
+    13. Executive reporting: Synthesized briefing summary, native vector PDF (9,419 bytes via ReportLab), and CSV package.
+    14. Immutable audit trail: Verified append-only security logs in `data/audit/security_audit.log`.
+    - Total E2E workflow runtime: **1.63 seconds**.
+  - Authored and executed `scripts/verify_independent_validation.py` verifying 9 independent numerical and security criteria:
+    1. Financial calculation accuracy: Exact unit CM ($71.33 baseline vs $58.33 disrupted, exact -$13.00 delta) matching GAAP waterfall.
+    2. Inventory & demand conservation: Fulfilled (13,572) + Lost (1,968) = Total (15,540) demand units.
+    3. Simulation determinism: 100% bit-for-bit identical results across repeated deterministic seed runs.
+    4. Optimization feasibility: Infeasibility detected for $0 budget / 98% service level; strict bounds enforced on $12K and $40K budgets.
+    5. Forecast prediction intervals: Verified strict monotonic ordering ($L_{95} \le L_{80} \le \hat{y} \le U_{80} \le U_{95}$).
+    6. Database integrity: `PRAGMA integrity_check` = `ok`, 0 foreign key violations, WAL mode verified.
+    7. Enterprise RBAC: 401 on unauthenticated, 403 on Analyst attempting audit trail, 200 on Admin.
+    8. File upload security: Path traversal `../../../../etc/passwd.csv` sanitized to `passwd.csv`; non-spreadsheet rejected with 400.
+    9. API error handling: 422 on schema violation, 404 on missing entity, NOT_FOUND on invalid rollback token.
+    - Total independent validation runtime: **2.10 seconds** (all 9 suites passed).
+  - Authored and executed `scripts/run_final_performance_audit.py` benchmarking:
+    - SQLite 100 Query Latency: P50 = **0.146 ms**, P95 = 0.236 ms, P99 = 1.172 ms.
+    - API Latencies (P50): `/health` 25.0 ms, `/twin/topology` 34.9 ms, `/scenarios/simulate` 43.1 ms, `/optimization/solve` 57.5 ms, `/rca/trace` 14.7 ms, `/forecasting/evaluate` 298.2 ms.
+    - Batch Simulation Throughput: 10 scn (131.1 scn/s), 50 scn (333.5 scn/s), 100 scn (**394.5 scn/s** in 253.5 ms).
+    - Host Memory Footprint: Peak backend RSS of **215.62 MB** (< 2.8% of 8 GB RAM limit), zero background daemons.
+    - Next.js 15 Production Build: Compiled cleanly with 0 TypeScript/ESLint errors; Route `/` bundle size: **152 kB**.
+  - Authored 7 formal audit deliverables:
+    1. `FINAL_ACCEPTANCE_AUDIT.md` (and user artifact)
+    2. `END_TO_END_VALIDATION_REPORT.md` (and user artifact)
+    3. `FINANCIAL_RECONCILIATION_REPORT.md` (and user artifact)
+    4. `SECURITY_VALIDATION_REPORT.md` (and user artifact)
+    5. `PERFORMANCE_AUDIT.md` (and user artifact)
+    6. `FINAL_DEMO_GUIDE.md` (and user artifact)
+    7. `FINAL_KNOWN_LIMITATIONS.md` (and user artifact)
+  - Total cumulative project expenditure: **₹0.00**. Background daemons running: **0**.
+- **Outcome:** The Final Integrated Acceptance Audit is 100% complete, verified, and accepted. SARAS ATLAS is production-ready.
+

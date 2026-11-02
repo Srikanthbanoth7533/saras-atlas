@@ -56,3 +56,4 @@ class RootCauseTraceResponse(BaseModel):
     top_influential_variables: List[InfluentialVariable]
     evidence_telemetry: List[str]
     generated_at: str
+

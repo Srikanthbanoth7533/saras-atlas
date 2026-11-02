@@ -304,3 +304,4 @@ class AdvancedForecaster:
             preds.append(pred)
             history.append(pred)
         return np.array(preds)
+

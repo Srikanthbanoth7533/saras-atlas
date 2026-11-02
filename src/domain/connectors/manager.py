@@ -179,3 +179,4 @@ class EnterpriseConnectorManager:
             recommended_sync_mode="INCREMENTAL_DELTA_APPEND",
             generated_at=now_str,
         )
+

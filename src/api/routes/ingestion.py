@@ -4,6 +4,7 @@ Endpoints for CSV/Excel upload preview, schema mapping, transactional commit,
 safe rollback, and data quality health monitoring.
 """
 
+import os
 from typing import Optional
 from fastapi import APIRouter, UploadFile, File, Form, HTTPException
 from fastapi.responses import PlainTextResponse
@@ -30,13 +31,22 @@ async def preview_uploaded_dataset(
     target_entity: IngestionEntity = Form(default=IngestionEntity.INVENTORY_SNAPSHOT),
 ):
     """Parses an uploaded CSV or Excel file and returns pre-flight schema preview and validation issues."""
+    safe_filename = os.path.basename(file.filename or "upload.csv")
+    ext = os.path.splitext(safe_filename)[1].lower()
+    if ext not in [".csv", ".xlsx", ".xls"]:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Unsupported file format '{ext}'. Only .csv, .xlsx, and .xls are supported.",
+        )
     try:
         content = await file.read()
         return IngestionValidator.generate_preview(
             file_bytes=content,
-            filename=file.filename or "upload.csv",
+            filename=safe_filename,
             target_entity=target_entity,
         )
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Failed to parse upload: {str(e)}")
 

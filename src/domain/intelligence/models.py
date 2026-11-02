@@ -43,3 +43,4 @@ class IntelligenceResponse(BaseModel):
     citations: List[GroundedCitation]
     suggested_actions: List[str]
     data_freshness: str = "VERIFIED_LIVE_TWIN_DATA"
+

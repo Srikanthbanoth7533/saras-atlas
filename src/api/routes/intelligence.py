@@ -27,3 +27,4 @@ def get_sample_queries():
         "How does cross-zone fulfillment from WH-EAST bleed our margin?",
         "What is the optimal dual-sourcing split between Shenzhen and Saigon?",
     ]
+

@@ -51,3 +51,4 @@ class SchemaDiscoveryResponse(BaseModel):
     tables: Dict[str, List[Dict[str, str]]]  # table_name -> list of {column: name, type: type}
     recommended_sync_mode: str
     generated_at: str
+

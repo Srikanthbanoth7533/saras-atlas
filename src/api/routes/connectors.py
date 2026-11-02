@@ -35,3 +35,4 @@ def discover_schema(
     user: User = Depends(get_current_user),
 ):
     return EnterpriseConnectorManager.discover_schema(connector_id)
+
