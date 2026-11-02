@@ -15,6 +15,11 @@ import { GovernanceInterface } from "@/components/modules/GovernanceInterface";
 import BatchScenarioEngine from "@/components/modules/BatchScenarioEngine";
 import DynamicPolicyOptimization from "@/components/modules/DynamicPolicyOptimization";
 import DataIngestionCenter from "@/components/modules/DataIngestionCenter";
+import IntelligenceCenter from "@/components/modules/IntelligenceCenter";
+import RootCauseAnalysis from "@/components/modules/RootCauseAnalysis";
+import ForecastingStudio from "@/components/modules/ForecastingStudio";
+import ExecutiveReportingCenter from "@/components/modules/ExecutiveReportingCenter";
+import EnterpriseConnectors from "@/components/modules/EnterpriseConnectors";
 
 import {
   getSystemHealth,
@@ -328,6 +333,31 @@ export default function Home() {
         {/* Phase 3 Module C: Enterprise Data Ingestion & Quality */}
         {activeTab === "ingestion" && (
           <DataIngestionCenter />
+        )}
+
+        {/* Phase 4 Module 1: AI Decision Intelligence & Grounding */}
+        {activeTab === "intelligence" && (
+          <IntelligenceCenter />
+        )}
+
+        {/* Phase 4 Module 2: Root Cause Analysis & Dependency Tracing */}
+        {activeTab === "rca" && (
+          <RootCauseAnalysis />
+        )}
+
+        {/* Phase 4 Module 3: Advanced Forecasting Studio */}
+        {activeTab === "forecasting" && (
+          <ForecastingStudio />
+        )}
+
+        {/* Phase 4 Module 4: Executive Reporting Center */}
+        {activeTab === "reports" && (
+          <ExecutiveReportingCenter />
+        )}
+
+        {/* Phase 4 Module 5: Enterprise Cloud Connectors */}
+        {activeTab === "connectors" && (
+          <EnterpriseConnectors />
         )}
 
         {/* Module 8: Financial Impact & Contribution Margin Waterfall */}

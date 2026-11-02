@@ -14,6 +14,11 @@ import {
   Layers,
   Scale,
   Database,
+  BrainCircuit,
+  GitMerge,
+  TrendingUp,
+  FileText,
+  Cloud,
 } from "lucide-react";
 
 export type ActiveTab =
@@ -26,6 +31,11 @@ export type ActiveTab =
   | "batch"
   | "policy"
   | "ingestion"
+  | "intelligence"
+  | "rca"
+  | "forecasting"
+  | "reports"
+  | "connectors"
   | "waterfall"
   | "governance";
 
@@ -50,6 +60,11 @@ export function TabNavigation({
     { id: "batch", label: "Batch & Sensitivity", icon: Layers },
     { id: "policy", label: "Policy Optimization", icon: Scale },
     { id: "ingestion", label: "Data Ingestion", icon: Database },
+    { id: "intelligence", label: "AI Copilot", icon: BrainCircuit },
+    { id: "rca", label: "Root Cause Trace", icon: GitMerge },
+    { id: "forecasting", label: "Forecasting Studio", icon: TrendingUp },
+    { id: "reports", label: "Executive Reports", icon: FileText },
+    { id: "connectors", label: "Cloud Connectors", icon: Cloud },
     { id: "waterfall", label: "Financial Waterfall", icon: BarChart3 },
     { id: "governance", label: "Governance & Audit", icon: ShieldCheck },
   ];

@@ -8,6 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 
 from src.config import settings
+from src.api.middleware.security import SecurityHeadersMiddleware, RateLimitingMiddleware
 from src.api.routes import (
     health,
     twin,
@@ -18,6 +19,14 @@ from src.api.routes import (
     batch,
     policy,
     ingestion,
+    auth,
+    intelligence,
+    rca,
+    explainability,
+    forecasting,
+    connectors,
+    reports,
+    security,
 )
 
 app = FastAPI(
@@ -26,13 +35,18 @@ app = FastAPI(
         "Enterprise Digital Twin & Decision Simulation Platform for E-Commerce and Retail. "
         "Provides multi-echelon network topology, operational risk detection, 90-day discrete "
         "difference scenario simulation, Google OR-Tools MILP prescriptive optimization, "
-        "and Two-Man Rule governance with SHA-256 cryptographic audit trails."
+        "AI Decision Intelligence, Root Cause Analysis, Advanced Time-Series Forecasting, "
+        "Enterprise Warehouse Connectors, and Executive Reporting with Two-Man Rule Governance."
     ),
-    version="1.0.0",
+    version="1.4.0",
     docs_url="/docs",
     redoc_url="/redoc",
     openapi_url="/openapi.json",
 )
+
+# Enforce Enterprise Security & Rate Limiting Middleware
+app.add_middleware(SecurityHeadersMiddleware)
+app.add_middleware(RateLimitingMiddleware)
 
 # Enable CORS for local and web UI clients
 app.add_middleware(
@@ -54,6 +68,14 @@ app.include_router(governance.router, prefix=api_v1_prefix)
 app.include_router(batch.router, prefix=api_v1_prefix)
 app.include_router(policy.router, prefix=api_v1_prefix)
 app.include_router(ingestion.router, prefix=api_v1_prefix)
+app.include_router(auth.router, prefix=api_v1_prefix)
+app.include_router(intelligence.router, prefix=api_v1_prefix)
+app.include_router(rca.router, prefix=api_v1_prefix)
+app.include_router(explainability.router, prefix=api_v1_prefix)
+app.include_router(forecasting.router, prefix=api_v1_prefix)
+app.include_router(connectors.router, prefix=api_v1_prefix)
+app.include_router(reports.router, prefix=api_v1_prefix)
+app.include_router(security.router, prefix=api_v1_prefix)
 
 
 @app.get("/", include_in_schema=False)

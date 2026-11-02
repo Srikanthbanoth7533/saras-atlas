@@ -238,3 +238,79 @@ export async function fetchDataQualityReport(): Promise<DataQualityReport> {
   return fetchJson<DataQualityReport>(`${API_BASE}/ingestion/quality`);
 }
 
+// =========================================================================
+// PHASE 4 API CLIENT FUNCTIONS
+// =========================================================================
+
+export async function askIntelligence(
+  query: string,
+  entityFocus?: string
+): Promise<import("./types").IntelligenceResponse> {
+  return fetchJson<import("./types").IntelligenceResponse>(`${API_BASE}/intelligence/query`, {
+    method: "POST",
+    body: JSON.stringify({ query, entity_focus: entityFocus }),
+  });
+}
+
+export async function fetchSampleQueries(): Promise<string[]> {
+  return fetchJson<string[]>(`${API_BASE}/intelligence/sample-queries`);
+}
+
+export async function fetchRootCauseTrace(
+  disruptionId: string = "DISR-PO9012"
+): Promise<import("./types").RootCauseTraceResponse> {
+  return fetchJson<import("./types").RootCauseTraceResponse>(
+    `${API_BASE}/rca/trace?disruption_id=${encodeURIComponent(disruptionId)}`
+  );
+}
+
+export async function fetchExplainableRecommendations(
+  scenarioId: string = "SCN-CURRENT-DISRUPTION"
+): Promise<import("./types").PrescriptiveDossierResponse> {
+  return fetchJson<import("./types").PrescriptiveDossierResponse>(
+    `${API_BASE}/explainability/recommendations?scenario_id=${encodeURIComponent(scenarioId)}`
+  );
+}
+
+export async function fetchForecastingEvaluation(
+  seriesType: string = "DAILY_DEMAND",
+  horizonDays: number = 30
+): Promise<import("./types").ForecastingEvaluationResponse> {
+  return fetchJson<import("./types").ForecastingEvaluationResponse>(
+    `${API_BASE}/forecasting/evaluate?series_type=${encodeURIComponent(seriesType)}&horizon_days=${horizonDays}`
+  );
+}
+
+export async function fetchConnectors(): Promise<import("./types").ConnectorConfig[]> {
+  return fetchJson<import("./types").ConnectorConfig[]>(`${API_BASE}/connectors/list`);
+}
+
+export async function testConnector(
+  connectorId: string
+): Promise<import("./types").ConnectionTestResult> {
+  return fetchJson<import("./types").ConnectionTestResult>(
+    `${API_BASE}/connectors/${encodeURIComponent(connectorId)}/test`,
+    { method: "POST" }
+  );
+}
+
+export async function discoverConnectorSchema(
+  connectorId: string
+): Promise<import("./types").SchemaDiscoveryResponse> {
+  return fetchJson<import("./types").SchemaDiscoveryResponse>(
+    `${API_BASE}/connectors/${encodeURIComponent(connectorId)}/schema`
+  );
+}
+
+export async function fetchExecutiveReportSummary(): Promise<import("./types").ExecutiveReportData> {
+  return fetchJson<import("./types").ExecutiveReportData>(`${API_BASE}/reports/summary`);
+}
+
+export async function fetchSecurityAuditTrail(
+  limit: number = 50
+): Promise<import("./types").AuditLogEntry[]> {
+  return fetchJson<import("./types").AuditLogEntry[]>(
+    `${API_BASE}/security/audit-trail?limit=${limit}`
+  );
+}
+

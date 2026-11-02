@@ -45,7 +45,12 @@ $tabs = @(
     @{ Name = "08_governance_two_man_rule.png"; Url = "http://localhost:3000/?tab=governance" },
     @{ Name = "09_batch_scenario_engine.png"; Url = "http://localhost:3000/?tab=batch" },
     @{ Name = "10_dynamic_policy_optimization.png"; Url = "http://localhost:3000/?tab=policy" },
-    @{ Name = "11_enterprise_data_ingestion.png"; Url = "http://localhost:3000/?tab=ingestion" }
+    @{ Name = "11_enterprise_data_ingestion.png"; Url = "http://localhost:3000/?tab=ingestion" },
+    @{ Name = "12_intelligence_center.png"; Url = "http://localhost:3000/?tab=intelligence" },
+    @{ Name = "13_root_cause_analysis.png"; Url = "http://localhost:3000/?tab=rca" },
+    @{ Name = "14_forecasting_studio.png"; Url = "http://localhost:3000/?tab=forecasting" },
+    @{ Name = "15_executive_reporting.png"; Url = "http://localhost:3000/?tab=reports" },
+    @{ Name = "16_enterprise_connectors.png"; Url = "http://localhost:3000/?tab=connectors" }
 )
 
 Write-Host "[3/4] Capturing interface screenshots via headless Microsoft Edge..."

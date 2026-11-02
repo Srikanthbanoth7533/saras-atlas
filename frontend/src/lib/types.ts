@@ -447,3 +447,231 @@ export interface DataQualityReport {
   last_audit_timestamp: string;
 }
 
+// =========================================================================
+// PHASE 4: ENTERPRISE INTELLIGENCE, RCA, FORECASTING & CONNECTORS
+// =========================================================================
+
+export interface GroundedCitation {
+  source_entity: string;
+  record_key: string;
+  metric_name: string;
+  verified_value: string;
+  audit_timestamp: string;
+}
+
+export interface IntelligenceResponse {
+  query: string;
+  intent_topic: string;
+  confidence_score: number;
+  answer_markdown: string;
+  grounded_metrics: Record<string, any>;
+  citations: GroundedCitation[];
+  suggested_actions: string[];
+  data_freshness: string;
+}
+
+export interface CausalNode {
+  node_id: string;
+  label: string;
+  layer: "UPSTREAM_SUPPLIER" | "LOGISTICS_CORRIDOR" | "FULFILLMENT_NODE" | "CUSTOMER_DELIVERY" | "FINANCIAL_EBITDA";
+  metric_label: string;
+  metric_value: string;
+  severity: "CRITICAL" | "WARNING" | "NORMAL";
+  causal_parent_id?: string;
+  impact_weight: number;
+  description: string;
+}
+
+export interface FinancialAttributionSegment {
+  segment_name: string;
+  dollar_impact: number;
+  percentage_of_total: number;
+  accounting_category: string;
+  evidence_citation: string;
+}
+
+export interface InfluentialVariable {
+  variable_name: string;
+  elasticity_rank: number;
+  sensitivity_score: number;
+  observed_value: string;
+  baseline_value: string;
+  unit_of_measure: string;
+  explanation: string;
+}
+
+export interface RootCauseTraceResponse {
+  disruption_id: string;
+  primary_root_cause: string;
+  root_cause_narrative: string;
+  causal_chain: CausalNode[];
+  financial_attribution: FinancialAttributionSegment[];
+  total_financial_impact: number;
+  top_influential_variables: InfluentialVariable[];
+  evidence_telemetry: string[];
+  generated_at: string;
+}
+
+export interface ExplainableRecommendationItem {
+  recommendation_id: string;
+  action_type: string;
+  title: string;
+  what_action: string;
+  why_recommended: string;
+  expected_financial_benefits: string;
+  benefit_dollar_amount: number;
+  required_capital: string;
+  capital_dollar_amount: number;
+  operational_tradeoffs: string;
+  risks_and_assumptions: string;
+  alternative_actions: string[];
+  consequences_of_no_action: string;
+  governance_requirement: string;
+  priority_rank: number;
+}
+
+export interface PrescriptiveDossierResponse {
+  scenario_id: string;
+  solver_status: string;
+  total_required_capital: number;
+  total_expected_financial_benefit: number;
+  net_roi_multiple: number;
+  recommendations: ExplainableRecommendationItem[];
+  governance_mandate: string;
+  generated_at: string;
+}
+
+export interface ModelEvaluationScore {
+  model_name: string;
+  mae: number;
+  rmse: number;
+  mape: number;
+  wape: number;
+  test_samples_count: number;
+  is_best_model: boolean;
+  fit_duration_ms: number;
+}
+
+export interface DriftAnalysis {
+  drift_detected: boolean;
+  drift_severity: "NONE" | "MILD_VOLATILITY" | "STRUCTURAL_REGIME_SHIFT";
+  z_score_shift: number;
+  ks_statistic: number;
+  p_value: number;
+  message: string;
+  recommended_retraining_cadence: string;
+}
+
+export interface ForecastDataPoint {
+  period: number;
+  date: string;
+  actual?: number | null;
+  predicted: number;
+  lower_80: number;
+  upper_80: number;
+  lower_95: number;
+  upper_95: number;
+  is_forecast_horizon: boolean;
+}
+
+export interface ForecastingEvaluationResponse {
+  series_type: "DAILY_DEMAND" | "LEAD_TIME_DAYS";
+  target_entity: string;
+  train_periods: number;
+  test_periods: number;
+  forecast_horizon: number;
+  models_evaluated: ModelEvaluationScore[];
+  best_model_name: string;
+  forecast_trajectory: ForecastDataPoint[];
+  drift_analysis: DriftAnalysis;
+  validation_methodology: string;
+  generated_at: string;
+}
+
+export interface ConnectorConfig {
+  connector_id: string;
+  name: string;
+  connector_type: "BIGQUERY" | "SNOWFLAKE" | "AMAZON_REDSHIFT" | "REST_WEBHOOK" | "CSV_EXCEL";
+  is_enabled: boolean;
+  host?: string;
+  database?: string;
+  warehouse_or_dataset?: string;
+  auth_mode: string;
+  is_sandbox_mode: boolean;
+  description: string;
+}
+
+export interface ConnectionTestResult {
+  connector_id: string;
+  connector_type: string;
+  success: boolean;
+  latency_ms: number;
+  status: string;
+  message: string;
+  discovered_tables_count: number;
+  discovered_tables: string[];
+  sample_rows_previewed: number;
+  security_posture: string;
+}
+
+export interface SchemaDiscoveryResponse {
+  connector_id: string;
+  connector_type: string;
+  dialect: string;
+  database: string;
+  schema_name: string;
+  tables: Record<string, Array<{ column: string; type: string }>>;
+  recommended_sync_mode: string;
+  generated_at: string;
+}
+
+export interface AuditLogEntry {
+  timestamp: string;
+  event_id: string;
+  user_id: string;
+  username: string;
+  role: string;
+  action: string;
+  resource: string;
+  status: string;
+  client_ip?: string;
+  details?: Record<string, any>;
+}
+
+export interface ExecutiveReportData {
+  title: string;
+  subtitle: string;
+  enterprise: string;
+  generated_at: string;
+  executive_summary: string;
+  kpi_posture: string[][];
+  active_disruptions: Array<{
+    id: string;
+    title: string;
+    severity: string;
+    node: string;
+    exposure: string;
+  }>;
+  root_cause_analysis: {
+    primary_cause: string;
+    narrative: string;
+    attributions: string[][];
+  };
+  recommendations: Array<{
+    rank: number;
+    title: string;
+    action: string;
+    financial_benefit: string;
+    capital: string;
+    tradeoffs: string;
+    consequences_inaction: string;
+  }>;
+  assumptions_and_limitations: string[];
+  governance: {
+    mandate: string;
+    approver_1: string;
+    approver_2: string;
+    digital_seal: string;
+  };
+}
+
