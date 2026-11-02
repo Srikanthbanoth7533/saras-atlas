@@ -82,6 +82,16 @@ app.include_router(reports.router, prefix=api_v1_prefix)
 app.include_router(security.router, prefix=api_v1_prefix)
 
 
+@app.on_event("startup")
+def on_startup():
+    """Ensures relational and analytical databases exist with golden benchmark seed."""
+    from src.synthetic.loader import seed_database
+    try:
+        seed_database()
+    except Exception as e:
+        print(f"[STARTUP WARNING] Database initialization: {e}")
+
+
 @app.get("/", include_in_schema=False)
 def root():
     """Redirects root requests to interactive OpenAPI Swagger documentation."""
