@@ -42,7 +42,10 @@ $tabs = @(
     @{ Name = "05_scenario_comparison.png"; Url = "http://localhost:3000/?tab=comparison" },
     @{ Name = "06_prescriptive_optimization.png"; Url = "http://localhost:3000/?tab=optimization" },
     @{ Name = "07_financial_waterfall.png"; Url = "http://localhost:3000/?tab=waterfall" },
-    @{ Name = "08_governance_two_man_rule.png"; Url = "http://localhost:3000/?tab=governance" }
+    @{ Name = "08_governance_two_man_rule.png"; Url = "http://localhost:3000/?tab=governance" },
+    @{ Name = "09_batch_scenario_engine.png"; Url = "http://localhost:3000/?tab=batch" },
+    @{ Name = "10_dynamic_policy_optimization.png"; Url = "http://localhost:3000/?tab=policy" },
+    @{ Name = "11_enterprise_data_ingestion.png"; Url = "http://localhost:3000/?tab=ingestion" }
 )
 
 Write-Host "[3/4] Capturing interface screenshots via headless Microsoft Edge..."
@@ -51,7 +54,8 @@ foreach ($tab in $tabs) {
     $brainFile = Join-Path $brainDir $tab.Name
     Write-Host "  Capturing $($tab.Name)..."
     
-    & $edgePath --headless --disable-gpu --window-size=1440,900 --virtual-time-budget=4000 --screenshot="$outFile" "$($tab.Url)" 2>$null
+    Start-Process -FilePath $edgePath -ArgumentList "--headless", "--disable-gpu", "--window-size=1440,960", "--virtual-time-budget=5000", "--screenshot=""$outFile""", "$($tab.Url)" -Wait
+    Start-Sleep -Seconds 1
     if (Test-Path $outFile) {
         Copy-Item -Path $outFile -Destination $brainFile -Force
         Write-Host "    [OK] Captured $outFile"
@@ -73,3 +77,4 @@ Get-NetTCPConnection -LocalPort 3000 -ErrorAction SilentlyContinue | ForEach-Obj
 Get-NetTCPConnection -LocalPort 8000 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }
 
 Write-Host "Screenshot capture complete!"
+

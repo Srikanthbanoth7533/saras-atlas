@@ -146,3 +146,4 @@ export function RiskMonitoring({ risks, onSimulateRisk }: RiskMonitoringProps) {
     </div>
   );
 }
+

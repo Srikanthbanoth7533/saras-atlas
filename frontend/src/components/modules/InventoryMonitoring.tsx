@@ -238,3 +238,4 @@ export function InventoryMonitoring({ inventory }: InventoryMonitoringProps) {
     </div>
   );
 }
+

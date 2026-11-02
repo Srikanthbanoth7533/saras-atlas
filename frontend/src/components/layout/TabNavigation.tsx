@@ -11,6 +11,9 @@ import {
   Zap,
   BarChart3,
   ShieldCheck,
+  Layers,
+  Scale,
+  Database,
 } from "lucide-react";
 
 export type ActiveTab =
@@ -20,6 +23,9 @@ export type ActiveTab =
   | "simulation"
   | "comparison"
   | "optimization"
+  | "batch"
+  | "policy"
+  | "ingestion"
   | "waterfall"
   | "governance";
 
@@ -41,6 +47,9 @@ export function TabNavigation({
     { id: "simulation", label: "Simulation Studio", icon: Sliders },
     { id: "comparison", label: "Scenario Compare", icon: Split },
     { id: "optimization", label: "Prescriptive MILP", icon: Zap },
+    { id: "batch", label: "Batch & Sensitivity", icon: Layers },
+    { id: "policy", label: "Policy Optimization", icon: Scale },
+    { id: "ingestion", label: "Data Ingestion", icon: Database },
     { id: "waterfall", label: "Financial Waterfall", icon: BarChart3 },
     { id: "governance", label: "Governance & Audit", icon: ShieldCheck },
   ];
@@ -77,3 +86,4 @@ export function TabNavigation({
     </nav>
   );
 }
+

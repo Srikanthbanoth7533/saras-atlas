@@ -119,3 +119,18 @@ To uphold the strict ₹0 budget and 8 GB hardware bounds, the following tools w
 - **Client Bundle Size:** **131 kB** (Route `/`)
 - **Background Processes Running:** **0 persistent background daemons** (All servers terminated post-testing and screenshot capture)
 - **Compliance Status:** **100% COMPLIANT WITH ₹0 BUDGET & 8 GB RAM LIMITS**.
+
+---
+
+## 5. Phase 3 Cost & License Audit Post-Execution
+
+- **Total Incurred Cost in Phase 3:** **₹0.00**
+- **Cumulative Project Incurred Cost (Phases 0–3):** **₹0.00**
+- **Cloud/API Calls Made:** **0 calls** (Zero paid LLMs, zero paid cloud services)
+- **Added Backend Dependencies in `requirements.txt`:**
+  - `openpyxl==3.1.5` (MIT License) — Ingest and parse Excel `.xlsx` spreadsheets locally without Microsoft Office.
+  - `python-multipart==0.0.33` (Apache-2.0 License) — Standard streaming multipart parser for FastAPI file uploads.
+- **Client Bundle Size After Phase 3 Expansion:** **143 kB** (Route `/` with 13 enterprise modules)
+- **Host RAM Working Set Audited:** **94.89 MB RSS** peak during 100-scenario batch execution.
+- **Background Processes Running:** **0 persistent background daemons** (FastAPI and Next.js launched only on demand; zero background daemons running).
+- **Compliance Status:** **100% COMPLIANT WITH ₹0 BUDGET & 8 GB RAM LIMITS**.

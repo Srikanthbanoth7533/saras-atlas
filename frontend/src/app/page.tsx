@@ -12,6 +12,9 @@ import { ScenarioComparison } from "@/components/modules/ScenarioComparison";
 import { OptimizationRecommendations } from "@/components/modules/OptimizationRecommendations";
 import { FinancialWaterfall } from "@/components/modules/FinancialWaterfall";
 import { GovernanceInterface } from "@/components/modules/GovernanceInterface";
+import BatchScenarioEngine from "@/components/modules/BatchScenarioEngine";
+import DynamicPolicyOptimization from "@/components/modules/DynamicPolicyOptimization";
+import DataIngestionCenter from "@/components/modules/DataIngestionCenter";
 
 import {
   getSystemHealth,
@@ -310,6 +313,21 @@ export default function Home() {
             }}
             isLoading={isSolving}
           />
+        )}
+
+        {/* Phase 3 Module A: Multi-Scenario Batch Engine & Sensitivity */}
+        {activeTab === "batch" && (
+          <BatchScenarioEngine />
+        )}
+
+        {/* Phase 3 Module B: Dynamic Policy Optimization & Sourcing */}
+        {activeTab === "policy" && (
+          <DynamicPolicyOptimization />
+        )}
+
+        {/* Phase 3 Module C: Enterprise Data Ingestion & Quality */}
+        {activeTab === "ingestion" && (
+          <DataIngestionCenter />
         )}
 
         {/* Module 8: Financial Impact & Contribution Margin Waterfall */}

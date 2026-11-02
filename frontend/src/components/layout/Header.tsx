@@ -76,3 +76,4 @@ export function Header({ health, onRefresh, isRefreshing }: HeaderProps) {
     </header>
   );
 }
+

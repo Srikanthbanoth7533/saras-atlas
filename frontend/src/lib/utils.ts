@@ -36,3 +36,4 @@ export function formatNumber(num: number | null | undefined): string {
   if (num === null || num === undefined || isNaN(num)) return "0";
   return new Intl.NumberFormat("en-US").format(num);
 }
+

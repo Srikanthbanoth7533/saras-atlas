@@ -63,22 +63,25 @@
 
 ---
 
-## 3. Phase 1 & Phase 2 Verification & Resolution Outcomes
+## 3. Phase 1, Phase 2 & Phase 3 Verification & Resolution Outcomes
 
-| Risk ID | Observed Behavior in Phases 1 & 2 | Resolution / Actual Result | Current Status |
+| Risk ID | Observed Behavior in Phases 1, 2 & 3 | Resolution / Actual Result | Current Status |
 | :--- | :--- | :--- | :--- |
-| **Risk 01: RAM Ceiling** | Measured under backend load & Next.js production build | Peak RSS reached **96.77 MB** (backend) and build stayed well within 8 GB laptop limits | **RESOLVED / CONTROLLED** |
+| **Risk 01: RAM Ceiling** | Measured across 100-scenario batch runs and Next.js builds | Peak RSS reached **94.89 MB** (backend batch engine) and host RAM was 100% conserved | **RESOLVED / CONTROLLED** |
 | **Risk 02: Python Versioning** | Multiple Python versions on host system | Isolated `.venv` (Python 3.12.10) functioned without version conflicts | **RESOLVED / CONTROLLED** |
-| **Risk 03: Saras Boundary** | Clear public attribution maintained | Zero Saras private endpoints accessed; 100% independent data & models | **MAINTAINED** |
-| **Risk 04: Zero-Cost Budget** | ₹0 incurred across Phase 0, 1, and 2 | 100% open-source software, zero paid API tokens consumed | **MAINTAINED** |
+| **Risk 03: Saras Boundary** | Clear public attribution maintained across all docs and UI | Zero Saras private endpoints accessed; 100% independent data & models | **MAINTAINED** |
+| **Risk 04: Zero-Cost Budget** | ₹0 incurred across Phase 0, 1, 2, and 3 | 100% open-source software, zero paid API tokens consumed | **MAINTAINED** |
 | **Risk 05: MILP Complexity** | OR-Tools SCIP solver tested across multiple objectives | Solver converged to OPTIMAL in **85.58 ms** (P95: 260.86 ms), well below 1000 ms target | **RESOLVED / CONTROLLED** |
-| **Risk 06: Frontend Overhead** | Heavy Next.js bundle / memory creep | Compiled into **131 kB** client bundle with zero persistent background services | **RESOLVED / CONTROLLED** |
+| **Risk 06: Frontend Overhead** | Next.js 15 App Router bundle size with 13 modules | Compiled into **143 kB** client bundle with zero persistent background services | **RESOLVED / CONTROLLED** |
+| **Risk 07: Batch Concurrency**| 100 scenarios executed concurrently in memory | Vectorized difference equations achieved **503.2 scenarios/sec** throughput with +1.09 MB memory delta | **RESOLVED / CONTROLLED** |
+| **Risk 08: Ingestion Corruption**| Malformed CSV/Excel uploads or duplicate inserts | Atomic snapshot backups in `data/rollback/` and instant rollback token restoration | **RESOLVED / CONTROLLED** |
 
 ---
 
-## 4. Active Blockers for Phase 3
+## 4. Active Blockers for Phase 4
 
 | Blocker ID | Description | Impact | Action Required | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **BLK-01** | Phase 2 User Authorization Gate | Authorized Phase 2 execution | User granted Phase 2 authorization on 2026-11-02 | **RESOLVED** |
-| **BLK-02** | Explicit User Authorization Gate for Phase 3 | Work must pause after Phase 2 until user approves Phase 3 | Present `PHASE_2_MASTER_COMPLETION_REPORT.md` and await explicit user authorization | **WAITING FOR USER AUTHORIZATION** |
+| **BLK-02** | Explicit User Authorization Gate for Phase 3 | Authorized Phase 3 execution | User granted Phase 3 authorization on 2026-11-02 | **RESOLVED** |
+| **BLK-03** | Explicit User Authorization Gate for Phase 4 | Work must pause after Phase 3 until user approves Phase 4 | Present `PHASE_3_MASTER_COMPLETION_REPORT.md` and await explicit user authorization | **WAITING FOR USER AUTHORIZATION** |

@@ -76,3 +76,4 @@ export function StatCard({
     </div>
   );
 }
+

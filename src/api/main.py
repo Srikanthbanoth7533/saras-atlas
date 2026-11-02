@@ -15,6 +15,9 @@ from src.api.routes import (
     simulation,
     optimization,
     governance,
+    batch,
+    policy,
+    ingestion,
 )
 
 app = FastAPI(
@@ -48,6 +51,9 @@ app.include_router(risks.router, prefix=api_v1_prefix)
 app.include_router(simulation.router, prefix=api_v1_prefix)
 app.include_router(optimization.router, prefix=api_v1_prefix)
 app.include_router(governance.router, prefix=api_v1_prefix)
+app.include_router(batch.router, prefix=api_v1_prefix)
+app.include_router(policy.router, prefix=api_v1_prefix)
+app.include_router(ingestion.router, prefix=api_v1_prefix)
 
 
 @app.get("/", include_in_schema=False)
