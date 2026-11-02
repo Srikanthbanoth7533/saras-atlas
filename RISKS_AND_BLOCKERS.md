@@ -63,20 +63,22 @@
 
 ---
 
-## 3. Phase 1 Verification & Resolution Outcomes
+## 3. Phase 1 & Phase 2 Verification & Resolution Outcomes
 
-| Risk ID | Observed Behavior in Phase 1 | Resolution / Actual Result | Current Status |
+| Risk ID | Observed Behavior in Phases 1 & 2 | Resolution / Actual Result | Current Status |
 | :--- | :--- | :--- | :--- |
-| **Risk 01: RAM Ceiling** | Measured under full simulation and MILP solving | Peak RSS reached **96.77 MB**, safely below 350 MB target (< 1.2% of host RAM) | **RESOLVED / CONTROLLED** |
+| **Risk 01: RAM Ceiling** | Measured under backend load & Next.js production build | Peak RSS reached **96.77 MB** (backend) and build stayed well within 8 GB laptop limits | **RESOLVED / CONTROLLED** |
 | **Risk 02: Python Versioning** | Multiple Python versions on host system | Isolated `.venv` (Python 3.12.10) functioned without version conflicts | **RESOLVED / CONTROLLED** |
 | **Risk 03: Saras Boundary** | Clear public attribution maintained | Zero Saras private endpoints accessed; 100% independent data & models | **MAINTAINED** |
-| **Risk 04: Zero-Cost Budget** | ₹0 incurred across Phase 1 development and testing | 100% deterministic algorithms, zero paid API tokens consumed | **MAINTAINED** |
+| **Risk 04: Zero-Cost Budget** | ₹0 incurred across Phase 0, 1, and 2 | 100% open-source software, zero paid API tokens consumed | **MAINTAINED** |
 | **Risk 05: MILP Complexity** | OR-Tools SCIP solver tested across multiple objectives | Solver converged to OPTIMAL in **85.58 ms** (P95: 260.86 ms), well below 1000 ms target | **RESOLVED / CONTROLLED** |
+| **Risk 06: Frontend Overhead** | Heavy Next.js bundle / memory creep | Compiled into **131 kB** client bundle with zero persistent background services | **RESOLVED / CONTROLLED** |
 
 ---
 
-## 4. Active Blockers for Phase 2
+## 4. Active Blockers for Phase 3
 
 | Blocker ID | Description | Impact | Action Required | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **BLK-01** | Explicit User Authorization Gate | Work must pause after Phase 1 until the user approves Phase 2 | Present `PHASE_1_MASTER_COMPLETION_REPORT.md` and await user review | **WAITING FOR USER AUTHORIZATION** |
+| **BLK-01** | Phase 2 User Authorization Gate | Authorized Phase 2 execution | User granted Phase 2 authorization on 2026-11-02 | **RESOLVED** |
+| **BLK-02** | Explicit User Authorization Gate for Phase 3 | Work must pause after Phase 2 until user approves Phase 3 | Present `PHASE_2_MASTER_COMPLETION_REPORT.md` and await explicit user authorization | **WAITING FOR USER AUTHORIZATION** |

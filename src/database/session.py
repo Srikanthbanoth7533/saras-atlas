@@ -78,3 +78,4 @@ def get_duckdb_connection(read_only: bool = False) -> duckdb.DuckDBPyConnection:
     Returns an embedded DuckDB connection for analytical OLAP queries.
     """
     return duckdb.connect(settings.DUCKDB_PATH, read_only=read_only)
+

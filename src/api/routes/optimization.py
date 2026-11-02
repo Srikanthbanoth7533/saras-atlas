@@ -31,3 +31,4 @@ def solve_optimization(request: OptimizationRequest, session: Session = Depends(
     twin = DigitalTwinState(session=session)
     solver = PrescriptiveOptimizationSolver(twin_state=twin)
     return solver.solve(request)
+

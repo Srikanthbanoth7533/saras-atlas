@@ -258,3 +258,4 @@ Executed via `scripts/run_benchmarks.py`:
 > *"Important: Do not begin Phase 2 automatically. Stop after Phase 1, provide the complete report and wait for my explicit authorization."*
 
 Development has been **formally paused**. We await your review and explicit authorization before commencing Phase 2.
+

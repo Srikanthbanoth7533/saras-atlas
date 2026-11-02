@@ -80,3 +80,4 @@ class SimulationResponse(BaseModel):
     comparison_vs_baseline: Optional[ComparisonScorecard] = None
     executive_narrative: str
     daily_timeseries: Optional[Dict[str, List[float]]] = None
+

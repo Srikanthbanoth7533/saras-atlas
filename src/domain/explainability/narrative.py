@@ -95,3 +95,4 @@ class DeterministicNarrativeSynthesizer:
             paragraphs.append(breakdown)
 
         return "\n\n".join(paragraphs)
+

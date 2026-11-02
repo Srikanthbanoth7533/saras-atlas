@@ -55,3 +55,4 @@ class OptimizationResult(BaseModel):
     projected_fill_rate: float = Field(..., description="Projected customer order fill rate [0..1]")
     objective_value: float = Field(..., description="Value of objective function achieved")
     rationale: str = Field(..., description="Explainable mathematical rationale for recommendation")
+

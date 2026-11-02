@@ -105,3 +105,4 @@ def test_simulation_mitigated_flagship_resolution():
 
     # Assert narrative reflects resilience achieved
     assert "RESILIENCE ACHIEVED" in resp.executive_narrative
+

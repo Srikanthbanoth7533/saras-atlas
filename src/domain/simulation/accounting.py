@@ -85,3 +85,4 @@ def compute_working_capital_balance(
         "first_breach_day": cash_crunch_days[0] if cash_crunch_days else None,
         "daily_balances": daily_balances
     }
+

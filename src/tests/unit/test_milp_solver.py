@@ -77,3 +77,4 @@ def test_milp_minimize_working_capital_objective(twin_state):
     # Prioritizes cheaper inter-warehouse transfers ($3.20/unit) and max ad throttle over air freight
     assert result.recommended_transfer_units == 800  # Max transfer capacity utilized
     assert result.capital_required < 25000.00
+

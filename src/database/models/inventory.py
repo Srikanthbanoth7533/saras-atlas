@@ -84,3 +84,4 @@ class PurchaseOrderLine(Base, TimestampMixin):
     # Relationships
     purchase_order: Mapped["PurchaseOrder"] = relationship("PurchaseOrder", back_populates="lines")
     sku: Mapped["Sku"] = relationship("Sku", back_populates="po_lines")
+

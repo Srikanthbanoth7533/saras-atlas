@@ -112,3 +112,4 @@ class OperationalRiskSentinel:
         })
 
         return risks
+

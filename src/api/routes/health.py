@@ -105,3 +105,4 @@ def get_health_status():
         "memory": mem,
         "architecture": "In-Process Modular Monolith (< 350 MB Target RSS)",
     }
+

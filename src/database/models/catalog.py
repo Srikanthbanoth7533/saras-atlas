@@ -50,3 +50,4 @@ class Sku(Base, TimestampMixin):
     inventory_snapshots: Mapped[List["InventorySnapshot"]] = relationship("InventorySnapshot", back_populates="sku", cascade="all, delete-orphan")
     po_lines: Mapped[List["PurchaseOrderLine"]] = relationship("PurchaseOrderLine", back_populates="sku")
     order_lines: Mapped[List["OrderLine"]] = relationship("OrderLine", back_populates="sku")
+

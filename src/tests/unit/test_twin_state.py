@@ -56,3 +56,4 @@ def test_risk_sentinel_detections(twin_fixture):
     cz_risk = next(r for r in active_risks if r["risk_type"] == "OUT_OF_ZONE_EXPEDITED_DRAIN")
     assert cz_risk["severity"] == "CRITICAL"
     assert cz_risk["cost_delta_per_unit"] == 13.00
+

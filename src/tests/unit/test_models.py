@@ -242,3 +242,4 @@ def test_scenario_and_governance_records(test_db):
     assert fetched_rec.estimated_margin_saved == 241800.00
     assert fetched_rec.approvals[0].role == "COO"
     assert fetched_rec.approvals[0].digital_signature_hash.startswith("e3b0c4")
+
