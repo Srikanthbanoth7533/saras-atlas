@@ -29,7 +29,13 @@ import {
   DataQualityReport,
 } from "./types";
 
-const API_BASE = "http://127.0.0.1:8000/api/v1";
+export const API_BASE =
+  process.env.NEXT_PUBLIC_API_URL ||
+  (typeof window !== "undefined" && window.location.origin.includes(":3000")
+    ? "http://127.0.0.1:8000/api/v1"
+    : typeof window !== "undefined"
+    ? `${window.location.origin}/api/v1`
+    : "http://127.0.0.1:8000/api/v1");
 
 async function fetchJson<T>(url: string, options?: RequestInit): Promise<T> {
   const res = await fetch(url, {

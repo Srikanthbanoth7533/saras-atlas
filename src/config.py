@@ -37,6 +37,7 @@ class Settings(BaseSettings):
     # API Network Binding (Strict Localhost)
     API_HOST: str = "127.0.0.1"
     API_PORT: int = 8000
+    ALLOWED_ORIGINS: str = "*"
 
     def ensure_directories(self) -> None:
         """Ensure necessary runtime directories exist on the filesystem."""

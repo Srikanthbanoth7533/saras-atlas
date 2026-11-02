@@ -13,8 +13,23 @@ interface HeaderProps {
 
 export function Header({ health, onRefresh, isRefreshing }: HeaderProps) {
   return (
-    <header className="border-b border-white/[0.08] bg-command-950/90 backdrop-blur-md sticky top-0 z-50 px-6 py-3.5">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+    <header className="border-b border-white/[0.08] bg-command-950/90 backdrop-blur-md sticky top-0 z-50">
+      {/* Prominent Demonstration & Attribution Banner */}
+      <div className="bg-amber-950/50 border-b border-amber-500/30 px-6 py-1.5 text-[11px] text-amber-200/90 flex items-center justify-between flex-wrap gap-2">
+        <div className="flex items-center gap-2">
+          <span className="font-bold uppercase tracking-wider text-amber-400 bg-amber-900/60 px-1.5 py-0.5 rounded text-[10px] border border-amber-500/40">
+            Portfolio Demo
+          </span>
+          <span>
+            Independent engineering project using synthetic benchmarks (Vanguard Apparel Co. $45M GMV). Not affiliated with or endorsed by Saras Analytics.
+          </span>
+        </div>
+        <div className="text-[10px] text-amber-400/80 font-mono hidden md:inline-flex">
+          Strictly ₹0 Budget • Vercel Hobby + Render Free
+        </div>
+      </div>
+
+      <div className="px-6 py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-3">
         {/* Brand & Platform Identity */}
         <div className="flex items-center gap-3.5">
           <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-cyan-500 to-indigo-600 flex items-center justify-center shadow-[0_0_20px_rgba(6,182,212,0.4)]">

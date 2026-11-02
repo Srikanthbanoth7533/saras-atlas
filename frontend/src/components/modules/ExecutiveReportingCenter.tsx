@@ -17,7 +17,7 @@ import {
 import { Card, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { StatCard } from "@/components/ui/StatCard";
-import { fetchExecutiveReportSummary } from "@/lib/api";
+import { fetchExecutiveReportSummary, API_BASE } from "@/lib/api";
 import { ExecutiveReportData } from "@/lib/types";
 
 export default function ExecutiveReportingCenter() {
@@ -33,11 +33,11 @@ export default function ExecutiveReportingCenter() {
   }, []);
 
   const handleDownloadPdf = () => {
-    window.open("http://127.0.0.1:8000/api/v1/reports/export/pdf", "_blank");
+    window.open(`${API_BASE}/reports/export/pdf`, "_blank");
   };
 
   const handleDownloadCsv = () => {
-    window.open("http://127.0.0.1:8000/api/v1/reports/export/csv", "_blank");
+    window.open(`${API_BASE}/reports/export/csv`, "_blank");
   };
 
   return (

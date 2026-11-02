@@ -30,6 +30,7 @@ import {
   commitIngestionDataset,
   rollbackIngestion,
   fetchDataQualityReport,
+  API_BASE,
 } from "@/lib/api";
 
 export default function DataIngestionCenter() {
@@ -120,7 +121,7 @@ export default function DataIngestionCenter() {
   };
 
   const handleDownloadSample = (entity: IngestionEntity) => {
-    window.open(`http://127.0.0.1:8000/api/v1/ingestion/template/${entity}`, "_blank");
+    window.open(`${API_BASE}/ingestion/template/${entity}`, "_blank");
   };
 
   return (
@@ -523,7 +524,7 @@ export default function DataIngestionCenter() {
                 </div>
               </div>
               <button
-                onClick={() => window.open("http://127.0.0.1:8000/api/v1/governance/audit-trail", "_blank")}
+                onClick={() => window.open(`${API_BASE}/governance/audit-trail`, "_blank")}
                 className="w-full py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 flex items-center justify-center gap-1.5 transition-colors"
               >
                 <Download className="w-3.5 h-3.5" />
@@ -540,7 +541,7 @@ export default function DataIngestionCenter() {
                 </div>
               </div>
               <button
-                onClick={() => window.open("http://127.0.0.1:8000/openapi.json", "_blank")}
+                onClick={() => window.open(`${API_BASE.replace('/api/v1', '')}/openapi.json`, "_blank")}
                 className="w-full py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 flex items-center justify-center gap-1.5 transition-colors"
               >
                 <Download className="w-3.5 h-3.5" />
