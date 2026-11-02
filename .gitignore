@@ -65,6 +65,7 @@ data/parquet/
 .idea/
 *.swp
 *.swo
+.vercel/
 
 # OS files
 Thumbs.db
