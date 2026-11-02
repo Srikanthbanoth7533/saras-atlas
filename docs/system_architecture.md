@@ -141,3 +141,4 @@ flowchart LR
 | **Total System Footprint** | **$\sim 505\text{ MB}$** | **$< 1.0\%$** | **$\le 55\%$ (Bursts $< 200\text{ ms}$)** |
 
 **Conclusion:** The architecture operates comfortably within the host machine's 1.73 GB free memory headroom, preserving system stability and eliminating disk swap thrashing.
+

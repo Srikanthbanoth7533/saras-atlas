@@ -334,3 +334,4 @@ Returns the tool registration schema compliant with Anthropic's Model Context Pr
   ]
 }
 ```
+

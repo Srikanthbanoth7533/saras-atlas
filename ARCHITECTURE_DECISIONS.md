@@ -102,3 +102,4 @@
   2. **Pluggable LLM Adapter (Optional / Future):** Abstracted interface (`LLMProviderInterface`) allowing seamless connection to local free models (via Ollama) or cloud providers if authorized in future phases.
 - **Consequences:**
   - *Positive:* Guaranteed 100% uptime, zero token costs, instantaneous narrative generation, zero external API keys needed.
+

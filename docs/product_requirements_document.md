@@ -128,3 +128,4 @@ SARAS ATLAS is an operational digital twin and counterfactual decision simulatio
 | **KPI-03** | Financial Calculation Precision | Exact GAAP alignment | Zero floating-point drift |
 | **KPI-04** | Host Memory Usage | $\le 500$ MB combined | $\le 450$ MB combined |
 | **KPI-05** | Total Financial Spend | ₹0.00 | ₹0.00 |
+

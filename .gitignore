@@ -42,10 +42,15 @@ yarn-error.log*
 out/
 
 # Database files
+data/
 *.db
+*.db-shm
+*.db-wal
 *.sqlite
 *.sqlite3
 *.duckdb
+data/parquet/
+*.parquet
 
 # Environment variables & secrets
 .env
@@ -74,3 +79,4 @@ htmlcov/
 .playwright/
 test-results/
 playwright-report/
+

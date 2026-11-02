@@ -1,0 +1,1073 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "SARAS ATLAS API",
+    "description": "Enterprise Digital Twin & Decision Simulation Platform for E-Commerce and Retail. Provides multi-echelon network topology, operational risk detection, 90-day discrete difference scenario simulation, Google OR-Tools MILP prescriptive optimization, and Two-Man Rule governance with SHA-256 cryptographic audit trails.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/v1/health": {
+      "get": {
+        "tags": [
+          "Health & Diagnostics"
+        ],
+        "summary": "Get Health Status",
+        "description": "Returns real-time health, DB status, solver readiness, and memory footprint.",
+        "operationId": "get_health_status_api_v1_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/twin/topology": {
+      "get": {
+        "tags": [
+          "Digital Twin State"
+        ],
+        "summary": "Get Topology",
+        "description": "Returns the multi-echelon enterprise network topology and fulfillment graph.",
+        "operationId": "get_topology_api_v1_twin_topology_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/twin/inventory-summary": {
+      "get": {
+        "tags": [
+          "Digital Twin State"
+        ],
+        "summary": "Get Inventory Summary",
+        "description": "Returns aggregated SKU inventory balances across warehouses and pipeline.",
+        "operationId": "get_inventory_summary_api_v1_twin_inventory_summary_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/risks/active": {
+      "get": {
+        "tags": [
+          "Risk Sentinels"
+        ],
+        "summary": "Get Active Risks",
+        "description": "Runs automated operational risk sentinels and returns prioritized alerts.",
+        "operationId": "get_active_risks_api_v1_risks_active_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/scenarios/simulate": {
+      "post": {
+        "tags": [
+          "Scenario Simulation"
+        ],
+        "summary": "Simulate Scenario",
+        "description": "Executes a 90-day multi-echelon scenario simulation and records the run.",
+        "operationId": "simulate_scenario_api_v1_scenarios_simulate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimulationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SimulationResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/scenarios/compare": {
+      "post": {
+        "tags": [
+          "Scenario Simulation"
+        ],
+        "summary": "Compare Scenarios",
+        "description": "Runs baseline and mitigated scenarios side-by-side and outputs variance analysis.",
+        "operationId": "compare_scenarios_api_v1_scenarios_compare_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScenarioComparisonRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScenarioComparisonResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/optimization/solve": {
+      "post": {
+        "tags": [
+          "Prescriptive Optimization"
+        ],
+        "summary": "Solve Optimization",
+        "description": "Solves the multi-echelon MILP decision model using Google OR-Tools SCIP.",
+        "operationId": "solve_optimization_api_v1_optimization_solve_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OptimizationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OptimizationResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/governance/approve": {
+      "post": {
+        "tags": [
+          "Enterprise Governance"
+        ],
+        "summary": "Submit Approval",
+        "description": "Records an executive decision under the strict Two-Man Rule with cryptographic SHA-256 seal.",
+        "operationId": "submit_approval_api_v1_governance_approve_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApprovalRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApprovalResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/governance/audit-trail": {
+      "get": {
+        "tags": [
+          "Enterprise Governance"
+        ],
+        "summary": "Get Audit Trail",
+        "description": "Retrieves immutable audit trail of simulation runs and executive approval records.",
+        "operationId": "get_audit_trail_api_v1_governance_audit_trail_get",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 50,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ApprovalRequest": {
+        "properties": {
+          "recommendation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Recommendation Id"
+          },
+          "approver_primary_id": {
+            "type": "string",
+            "title": "Approver Primary Id",
+            "description": "ID of primary executive approver (e.g. COO)"
+          },
+          "approver_primary_name": {
+            "type": "string",
+            "title": "Approver Primary Name",
+            "description": "Name/title of primary approver"
+          },
+          "approver_secondary_id": {
+            "type": "string",
+            "title": "Approver Secondary Id",
+            "description": "ID of secondary executive approver (e.g. CFO)"
+          },
+          "approver_secondary_name": {
+            "type": "string",
+            "title": "Approver Secondary Name",
+            "description": "Name/title of secondary approver"
+          },
+          "decision": {
+            "type": "string",
+            "title": "Decision",
+            "description": "Decision: APPROVED, REJECTED, or MODIFIED",
+            "default": "APPROVED"
+          },
+          "notes": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notes",
+            "description": "Executive justification notes"
+          },
+          "approved_capital_outlay": {
+            "type": "number",
+            "title": "Approved Capital Outlay",
+            "description": "Total committed cash outlay ($)"
+          }
+        },
+        "type": "object",
+        "required": [
+          "approver_primary_id",
+          "approver_primary_name",
+          "approver_secondary_id",
+          "approver_secondary_name",
+          "approved_capital_outlay"
+        ],
+        "title": "ApprovalRequest"
+      },
+      "ApprovalResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "decision": {
+            "type": "string",
+            "title": "Decision"
+          },
+          "approved_capital_outlay": {
+            "type": "number",
+            "title": "Approved Capital Outlay"
+          },
+          "approver_primary": {
+            "type": "string",
+            "title": "Approver Primary"
+          },
+          "approver_secondary": {
+            "type": "string",
+            "title": "Approver Secondary"
+          },
+          "digital_signature_sha256": {
+            "type": "string",
+            "title": "Digital Signature Sha256"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "two_man_rule_satisfied": {
+            "type": "boolean",
+            "title": "Two Man Rule Satisfied"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "decision",
+          "approved_capital_outlay",
+          "approver_primary",
+          "approver_secondary",
+          "digital_signature_sha256",
+          "created_at",
+          "status",
+          "two_man_rule_satisfied"
+        ],
+        "title": "ApprovalResponse"
+      },
+      "ComparisonScorecard": {
+        "properties": {
+          "delta_revenue": {
+            "type": "number",
+            "title": "Delta Revenue"
+          },
+          "delta_contribution_margin": {
+            "type": "number",
+            "title": "Delta Contribution Margin"
+          },
+          "margin_percentage_shift": {
+            "type": "number",
+            "title": "Margin Percentage Shift"
+          },
+          "avoided_cross_zone_freight_penalty": {
+            "type": "number",
+            "title": "Avoided Cross Zone Freight Penalty"
+          },
+          "stockout_days_avoided": {
+            "type": "integer",
+            "title": "Stockout Days Avoided"
+          }
+        },
+        "type": "object",
+        "required": [
+          "delta_revenue",
+          "delta_contribution_margin",
+          "margin_percentage_shift",
+          "avoided_cross_zone_freight_penalty",
+          "stockout_days_avoided"
+        ],
+        "title": "ComparisonScorecard",
+        "description": "Variance deltas compared to baseline."
+      },
+      "DemandSurgeShock": {
+        "properties": {
+          "sku_code": {
+            "type": "string",
+            "title": "Sku Code",
+            "description": "Target SKU or prefix (e.g. APEX-JKT)"
+          },
+          "demand_multiplier": {
+            "type": "number",
+            "maximum": 5.0,
+            "minimum": 0.1,
+            "title": "Demand Multiplier",
+            "description": "Demand expansion factor (e.g. 1.45 for +45%)"
+          },
+          "duration_days": {
+            "type": "integer",
+            "maximum": 90.0,
+            "minimum": 1.0,
+            "title": "Duration Days",
+            "description": "Duration of promotional surge in days",
+            "default": 30
+          }
+        },
+        "type": "object",
+        "required": [
+          "sku_code",
+          "demand_multiplier"
+        ],
+        "title": "DemandSurgeShock",
+        "description": "Shock: Downstream customer demand multiplier."
+      },
+      "FreightSurchargeShock": {
+        "properties": {
+          "lane_id": {
+            "type": "string",
+            "title": "Lane Id",
+            "description": "Carrier lane (e.g. lane_east_coast_parcel)"
+          },
+          "surcharge_percentage": {
+            "type": "number",
+            "maximum": 3.0,
+            "minimum": -0.5,
+            "title": "Surcharge Percentage",
+            "description": "Percentage carrier rate increase (e.g. 0.28 for +28%)"
+          }
+        },
+        "type": "object",
+        "required": [
+          "lane_id",
+          "surcharge_percentage"
+        ],
+        "title": "FreightSurchargeShock",
+        "description": "Shock: Outbound parcel carrier freight surcharge."
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "MitigationsConfig": {
+        "properties": {
+          "emergency_air_freight_units": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Emergency Air Freight Units",
+            "description": "Units ordered via expedited air freight from Vietnam backup",
+            "default": 0
+          },
+          "inter_warehouse_transfer_units": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Inter Warehouse Transfer Units",
+            "description": "Units transferred ground East-to-West",
+            "default": 0
+          },
+          "ad_spend_throttle_percentage": {
+            "type": "number",
+            "maximum": 0.5,
+            "minimum": 0.0,
+            "title": "Ad Spend Throttle Percentage",
+            "description": "Percentage marketing ad throttle (0.0 to 0.50)",
+            "default": 0.0
+          }
+        },
+        "type": "object",
+        "title": "MitigationsConfig",
+        "description": "Collection of candidate operational mitigation decisions."
+      },
+      "ObjectiveType": {
+        "type": "string",
+        "enum": [
+          "MAXIMIZE_CONTRIBUTION_MARGIN",
+          "MINIMIZE_WORKING_CAPITAL",
+          "MAXIMIZE_FILL_RATE"
+        ],
+        "title": "ObjectiveType"
+      },
+      "OptimizationRequest": {
+        "properties": {
+          "capital_budget_ceiling": {
+            "type": "number",
+            "title": "Capital Budget Ceiling",
+            "description": "Max cash outlay for mitigations ($)",
+            "default": 40000.0
+          },
+          "min_service_fill_rate": {
+            "type": "number",
+            "title": "Min Service Fill Rate",
+            "description": "Minimum acceptable fill rate [0..1]",
+            "default": 0.9
+          },
+          "max_ad_throttle_pct": {
+            "type": "number",
+            "title": "Max Ad Throttle Pct",
+            "description": "Maximum allowed ad reduction [0..0.35]",
+            "default": 0.35
+          },
+          "target_sku": {
+            "type": "string",
+            "title": "Target Sku",
+            "description": "Target SKU experiencing disruption",
+            "default": "APEX-JKT"
+          },
+          "objective": {
+            "$ref": "#/components/schemas/ObjectiveType",
+            "default": "MAXIMIZE_CONTRIBUTION_MARGIN"
+          },
+          "supplier_candidate": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SupplierCandidate"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "transfer_candidate": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TransferCandidate"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "title": "OptimizationRequest"
+      },
+      "OptimizationResult": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status",
+            "description": "Solver status: OPTIMAL, FEASIBLE, or INFEASIBLE"
+          },
+          "solve_time_ms": {
+            "type": "integer",
+            "title": "Solve Time Ms",
+            "description": "Solver execution time in milliseconds"
+          },
+          "recommended_air_freight_units": {
+            "type": "integer",
+            "title": "Recommended Air Freight Units",
+            "description": "Units to air-freight from backup factory"
+          },
+          "recommended_transfer_units": {
+            "type": "integer",
+            "title": "Recommended Transfer Units",
+            "description": "Units to transfer between warehouses"
+          },
+          "recommended_ad_throttle_pct": {
+            "type": "number",
+            "title": "Recommended Ad Throttle Pct",
+            "description": "Percentage to throttle ad spend [0..1]"
+          },
+          "capital_required": {
+            "type": "number",
+            "title": "Capital Required",
+            "description": "Total cash required for air + transfer ($)"
+          },
+          "projected_net_contribution_margin": {
+            "type": "number",
+            "title": "Projected Net Contribution Margin",
+            "description": "Projected CM ($) over 90-day horizon"
+          },
+          "projected_contribution_margin_pct": {
+            "type": "number",
+            "title": "Projected Contribution Margin Pct",
+            "description": "Projected CM %"
+          },
+          "projected_stockout_days": {
+            "type": "integer",
+            "title": "Projected Stockout Days",
+            "description": "Projected stockout days under recommendation"
+          },
+          "projected_fill_rate": {
+            "type": "number",
+            "title": "Projected Fill Rate",
+            "description": "Projected customer order fill rate [0..1]"
+          },
+          "objective_value": {
+            "type": "number",
+            "title": "Objective Value",
+            "description": "Value of objective function achieved"
+          },
+          "rationale": {
+            "type": "string",
+            "title": "Rationale",
+            "description": "Explainable mathematical rationale for recommendation"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "solve_time_ms",
+          "recommended_air_freight_units",
+          "recommended_transfer_units",
+          "recommended_ad_throttle_pct",
+          "capital_required",
+          "projected_net_contribution_margin",
+          "projected_contribution_margin_pct",
+          "projected_stockout_days",
+          "projected_fill_rate",
+          "objective_value",
+          "rationale"
+        ],
+        "title": "OptimizationResult"
+      },
+      "ScenarioComparisonRequest": {
+        "properties": {
+          "baseline_request": {
+            "$ref": "#/components/schemas/SimulationRequest"
+          },
+          "mitigated_request": {
+            "$ref": "#/components/schemas/SimulationRequest"
+          }
+        },
+        "type": "object",
+        "required": [
+          "baseline_request",
+          "mitigated_request"
+        ],
+        "title": "ScenarioComparisonRequest"
+      },
+      "ScenarioComparisonResponse": {
+        "properties": {
+          "baseline_result": {
+            "$ref": "#/components/schemas/SimulationResponse"
+          },
+          "mitigated_result": {
+            "$ref": "#/components/schemas/SimulationResponse"
+          },
+          "net_margin_delta": {
+            "type": "number",
+            "title": "Net Margin Delta",
+            "description": "Protected Net CM ($)"
+          },
+          "revenue_saved": {
+            "type": "number",
+            "title": "Revenue Saved",
+            "description": "Revenue saved ($)"
+          },
+          "stockout_days_saved": {
+            "type": "integer",
+            "title": "Stockout Days Saved",
+            "description": "Days of stockout avoided"
+          },
+          "executive_verdict": {
+            "type": "string",
+            "title": "Executive Verdict",
+            "description": "Prescriptive synthesis"
+          }
+        },
+        "type": "object",
+        "required": [
+          "baseline_result",
+          "mitigated_result",
+          "net_margin_delta",
+          "revenue_saved",
+          "stockout_days_saved",
+          "executive_verdict"
+        ],
+        "title": "ScenarioComparisonResponse"
+      },
+      "ShocksConfig": {
+        "properties": {
+          "supplier_delays": {
+            "items": {
+              "$ref": "#/components/schemas/SupplierDelayShock"
+            },
+            "type": "array",
+            "title": "Supplier Delays"
+          },
+          "freight_surcharges": {
+            "items": {
+              "$ref": "#/components/schemas/FreightSurchargeShock"
+            },
+            "type": "array",
+            "title": "Freight Surcharges"
+          },
+          "demand_elasticities": {
+            "items": {
+              "$ref": "#/components/schemas/DemandSurgeShock"
+            },
+            "type": "array",
+            "title": "Demand Elasticities"
+          }
+        },
+        "type": "object",
+        "title": "ShocksConfig",
+        "description": "Collection of exogenous disruption shocks."
+      },
+      "SimulationRequest": {
+        "properties": {
+          "scenario_name": {
+            "type": "string",
+            "title": "Scenario Name",
+            "description": "Human-readable scenario name"
+          },
+          "horizon_days": {
+            "type": "integer",
+            "maximum": 180.0,
+            "minimum": 14.0,
+            "title": "Horizon Days",
+            "description": "Forward planning horizon in days",
+            "default": 90
+          },
+          "shocks": {
+            "$ref": "#/components/schemas/ShocksConfig"
+          },
+          "mitigations": {
+            "$ref": "#/components/schemas/MitigationsConfig"
+          }
+        },
+        "type": "object",
+        "required": [
+          "scenario_name"
+        ],
+        "title": "SimulationRequest",
+        "description": "Inbound request to run a counterfactual multi-echelon simulation."
+      },
+      "SimulationResponse": {
+        "properties": {
+          "scenario_name": {
+            "type": "string",
+            "title": "Scenario Name"
+          },
+          "execution_duration_ms": {
+            "type": "integer",
+            "title": "Execution Duration Ms"
+          },
+          "horizon_days": {
+            "type": "integer",
+            "title": "Horizon Days"
+          },
+          "summary_scorecard": {
+            "$ref": "#/components/schemas/SummaryScorecard"
+          },
+          "comparison_vs_baseline": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ComparisonScorecard"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "executive_narrative": {
+            "type": "string",
+            "title": "Executive Narrative"
+          },
+          "daily_timeseries": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "items": {
+                    "type": "number"
+                  },
+                  "type": "array"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Daily Timeseries"
+          }
+        },
+        "type": "object",
+        "required": [
+          "scenario_name",
+          "execution_duration_ms",
+          "horizon_days",
+          "summary_scorecard",
+          "executive_narrative"
+        ],
+        "title": "SimulationResponse",
+        "description": "Complete simulation evaluation response."
+      },
+      "SummaryScorecard": {
+        "properties": {
+          "gross_revenue": {
+            "type": "number",
+            "title": "Gross Revenue"
+          },
+          "net_revenue": {
+            "type": "number",
+            "title": "Net Revenue"
+          },
+          "cogs_total": {
+            "type": "number",
+            "title": "Cogs Total"
+          },
+          "freight_total": {
+            "type": "number",
+            "title": "Freight Total"
+          },
+          "allocated_ad_spend": {
+            "type": "number",
+            "title": "Allocated Ad Spend"
+          },
+          "net_contribution_margin": {
+            "type": "number",
+            "title": "Net Contribution Margin"
+          },
+          "contribution_margin_pct": {
+            "type": "number",
+            "title": "Contribution Margin Pct"
+          },
+          "total_orders_fulfilled": {
+            "type": "integer",
+            "title": "Total Orders Fulfilled"
+          },
+          "unfulfilled_lost_orders": {
+            "type": "integer",
+            "title": "Unfulfilled Lost Orders"
+          },
+          "stockout_days": {
+            "type": "integer",
+            "title": "Stockout Days"
+          },
+          "working_capital_required": {
+            "type": "number",
+            "title": "Working Capital Required"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gross_revenue",
+          "net_revenue",
+          "cogs_total",
+          "freight_total",
+          "allocated_ad_spend",
+          "net_contribution_margin",
+          "contribution_margin_pct",
+          "total_orders_fulfilled",
+          "unfulfilled_lost_orders",
+          "stockout_days",
+          "working_capital_required"
+        ],
+        "title": "SummaryScorecard",
+        "description": "Executive financial and operational metrics summary."
+      },
+      "SupplierCandidate": {
+        "properties": {
+          "supplier_id": {
+            "type": "string",
+            "title": "Supplier Id"
+          },
+          "supplier_name": {
+            "type": "string",
+            "title": "Supplier Name"
+          },
+          "mode": {
+            "type": "string",
+            "title": "Mode",
+            "default": "AIR_EXPEDITED"
+          },
+          "unit_cost_air": {
+            "type": "number",
+            "title": "Unit Cost Air",
+            "description": "Freight expediting premium per unit",
+            "default": 12.5
+          },
+          "lead_time_days": {
+            "type": "integer",
+            "title": "Lead Time Days",
+            "description": "Days to arrive at Reno 3PL",
+            "default": 8
+          },
+          "moq": {
+            "type": "integer",
+            "title": "Moq",
+            "description": "Minimum order quantity",
+            "default": 500
+          },
+          "max_capacity": {
+            "type": "integer",
+            "title": "Max Capacity",
+            "description": "Maximum available factory production",
+            "default": 3000
+          }
+        },
+        "type": "object",
+        "required": [
+          "supplier_id",
+          "supplier_name"
+        ],
+        "title": "SupplierCandidate"
+      },
+      "SupplierDelayShock": {
+        "properties": {
+          "po_number": {
+            "type": "string",
+            "title": "Po Number",
+            "description": "Purchase order identifier (e.g. PO-9012)"
+          },
+          "delay_days": {
+            "type": "integer",
+            "maximum": 90.0,
+            "minimum": -30.0,
+            "title": "Delay Days",
+            "description": "Additional days delayed at port/transit"
+          }
+        },
+        "type": "object",
+        "required": [
+          "po_number",
+          "delay_days"
+        ],
+        "title": "SupplierDelayShock",
+        "description": "Shock: Inbound purchase order arrival delay."
+      },
+      "TransferCandidate": {
+        "properties": {
+          "origin_warehouse_id": {
+            "type": "string",
+            "title": "Origin Warehouse Id"
+          },
+          "destination_warehouse_id": {
+            "type": "string",
+            "title": "Destination Warehouse Id"
+          },
+          "transfer_cost_per_unit": {
+            "type": "number",
+            "title": "Transfer Cost Per Unit",
+            "description": "Inter-node LTL freight cost",
+            "default": 3.2
+          },
+          "transit_days": {
+            "type": "integer",
+            "title": "Transit Days",
+            "description": "Days in transit between nodes",
+            "default": 4
+          },
+          "max_transfer_units": {
+            "type": "integer",
+            "title": "Max Transfer Units",
+            "description": "Max safe transfer without starving origin",
+            "default": 800
+          }
+        },
+        "type": "object",
+        "required": [
+          "origin_warehouse_id",
+          "destination_warehouse_id"
+        ],
+        "title": "TransferCandidate"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

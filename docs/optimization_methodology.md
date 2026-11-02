@@ -154,3 +154,4 @@ def build_mitigation_milp_solver(baseline_state, shocks, constraints_cfg):
 - **Solve Time:** Verified convergence to global optimality (optimality gap $\le 1.0\%$) in **$320\text{ to }480\text{ milliseconds}$** on the host Intel Core i5 processor.
 - **Memory Consumption:** Solver memory footprint is $< 45\text{ MB}$ peak during branch-and-cut tree exploration, completely respecting the 8 GB system limits.
 - **Fail-Safe Fallback:** If the SCIP solver reaches the 3.0-second time limit without proving absolute optimality, it returns the best feasible integer solution found with an explicit optimality gap metric (e.g. `gap = 0.014`).
+

@@ -147,3 +147,4 @@ def generate_vanguard_dataset(output_dir: str):
 - **Storage Format:** Stored as both optimized Apache Parquet files (for sub-second DuckDB OLAP scans) and loaded into SQLite (for SQLAlchemy OLTP relational operations).
 - **Disk Footprint:** Complete 180-day benchmark dataset consumes $< 25\text{ MB}$ compressed on disk.
 - **Generation Time:** Generates in $< 3.5\text{ seconds}$ on the Intel Core i5 host processor.
+

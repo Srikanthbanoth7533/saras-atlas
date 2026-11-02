@@ -91,3 +91,4 @@ To demonstrate unequivocal commercial and technical value, SARAS ATLAS centers i
 - **Budget:** ₹0 (Zero). Built entirely with battle-tested open-source libraries (FastAPI, Next.js, SQLAlchemy, DuckDB, NumPy, Google OR-Tools).
 - **Hardware Profile:** Optimized for an 8.0 GB RAM Windows 11 host computer, utilizing an in-process Modular Monolith architecture requiring < 1.0 GB total resident memory.
 - **Target Launch:** Fully operational Phase 0 baseline completed; ready for Phase 1 Data Foundation execution.
+

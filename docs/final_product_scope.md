@@ -108,3 +108,4 @@ sequenceDiagram
 3. Paid LLM API calls or heavy local language model installations.
 4. Live automated supplier RFQ email dispatchers.
 5. Multi-agent persona debate swarms.
+

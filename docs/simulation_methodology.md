@@ -161,3 +161,4 @@ Output: Inventory Matrix I[T, N], Financial Matrix FIN[T], Stockout Metrics M
 ```
 
 - **Computational Complexity:** $\mathcal{O}(H \times N \times K)$ where $H=90$ days, $N=3$ warehouses, $K=50$ SKUs. Total operations: $13,500$ daily state transitions, executing in $< 80\text{ milliseconds}$ in compiled NumPy.
+

@@ -125,3 +125,4 @@ def generate_approval_signature(recommendation_id: str, approver_id: str, role: 
 1. **Environment Variables:** All secrets and configuration variables are isolated in `.env` files (loaded via `python-dotenv` and Pydantic `BaseSettings`).
 2. **Git Hygiene:** Root `.gitignore` explicitly prevents `.env`, `.pem`, `.key`, and database files (`*.sqlite`, `*.db`) from ever being staged or committed.
 3. **Dependency Auditing:** All third-party Python and Node.js packages are pinned to exact semantic versions and scanned against the GitHub Advisory Database (`pip-audit` and `npm audit`).
+

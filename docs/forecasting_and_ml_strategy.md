@@ -119,3 +119,4 @@ Where:
 - $\alpha$: Shock magnitude (e.g. $1.45$ for a +45% viral TikTok surge).
 - $\lambda$: Half-life decay parameter (modeling the natural decay of social media virality over a 30-day window, $\lambda \approx 0.05$).
 - Ensures realistic demand curve shapes rather than unphysical infinite step-functions.
+

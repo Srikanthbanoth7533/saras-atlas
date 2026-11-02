@@ -91,3 +91,4 @@ flowchart LR
 
 ### Q3: "What infrastructure does this require to run locally?"
 - **Answer:** *"Zero cloud servers. Zero paid API keys. The entire platform runs as an in-process modular monolith on a standard 8 GB RAM laptop, consuming under 550 MB total memory, with zero software licensing costs."*
+

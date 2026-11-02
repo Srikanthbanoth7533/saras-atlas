@@ -128,3 +128,4 @@ Which checks:
 2. Node.js version (v24.15.0) and npm version (11.17.0).
 3. Git status and repository hygiene.
 4. Total available memory headroom ($\ge 1.5\text{ GB}$).
+

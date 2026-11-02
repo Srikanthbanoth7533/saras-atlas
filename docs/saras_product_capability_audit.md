@@ -147,3 +147,4 @@ If deployed alongside Saras Analytics, SARAS ATLAS would represent the premier d
 - **iQ MCP as the Natural Language Channel:** ATLAS exposes its simulation tools (`run_scenario_simulation`, `optimize_mitigation_plan`) to the Saras iQ MCP server, allowing an executive chatting with Claude to say:  
   *"Claude, run a simulation: what happens if our Vietnam supplier is delayed 18 days?"*  
   And Claude invokes SARAS ATLAS in the background, returning a verified, mathematically sound decision scorecard.
+

@@ -159,3 +159,4 @@ Zero-cost development, sub-second counterfactual simulation, and OR-Tools optimi
 2. **Speed & Zero-Risk Experimentation:** Unlike Kinaxis, which requires enterprise data pipelines and overnight batch processing, ATLAS provides sub-second interactive scenario evaluation on lightweight hardware.
 3. **True Interdisciplinary Decision-Making:** ATLAS unites the COO (inventory lead times and warehouse stockout horizons) and the CFO (Contribution Margin, landed freight costs, and daily working capital burn) into a single, synchronized decision workspace.
 4. **Complete Open-Source & Zero-Cost Feasibility:** ATLAS demonstrates that enterprise-grade decision intelligence can be delivered with ₹0 software licensing costs and sub-1GB RAM footprints.
+

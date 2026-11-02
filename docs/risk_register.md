@@ -76,3 +76,4 @@ SARAS ATLAS employs a standard qualitative Risk Severity Matrix based on **Likel
      *"SARAS ATLAS is an independent innovation project. It has not been commissioned, endorsed, or sponsored by Saras Analytics, nor does it access any private Saras systems or proprietary client data."*
   2. Zero attempts to connect to or scrape internal or authenticated Saras systems.
   3. All Saras product evaluations cite public documentation and case studies labeled as company-reported.
+

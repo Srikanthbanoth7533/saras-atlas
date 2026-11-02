@@ -109,3 +109,4 @@ gantt
   - 100% test coverage on critical accounting paths.
   - Zero security vulnerabilities (`pip-audit` and `npm audit` clean).
   - Absolute adherence to ₹0 budget.
+

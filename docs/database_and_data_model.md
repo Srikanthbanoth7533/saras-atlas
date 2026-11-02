@@ -353,3 +353,4 @@ To validate the flagship scenario rigorously without accessing confidential cust
 - **Strict Labeling Standard:** Every synthetic record generated is tagged with:
   `synthetic_flag = TRUE` and `dataset_provenance = 'SARAS_ATLAS_SYNTHETIC_BENCHMARK_V1'`.
 - All mock data is deterministically seeded (`seed = 42`) for 100% reproducible test verification.
+
