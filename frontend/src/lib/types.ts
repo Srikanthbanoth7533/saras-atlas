@@ -72,13 +72,32 @@ export interface InventorySummaryResponse {
 
 export interface ActiveRisk {
   risk_id: string;
-  category: "SUPPLY_CHAIN_INBOUND" | "LOGISTICS_SURCHARGE" | "INVENTORY_STOCKOUT" | string;
-  severity: "CRITICAL" | "WARNING" | "INFO";
+  category?: "SUPPLY_CHAIN_INBOUND" | "LOGISTICS_SURCHARGE" | "INVENTORY_STOCKOUT" | string;
+  risk_type?: string;
+  severity: "CRITICAL" | "HIGH" | "WARNING" | "INFO" | string;
   title: string;
-  description: string;
-  financial_exposure_estimate: number;
-  impacted_entities: string[];
-  recommended_action: string;
+  description?: string;
+  summary?: string;
+  financial_exposure_estimate?: number;
+  estimated_revenue_exposure?: number;
+  estimated_monthly_freight_inflation?: number;
+  cost_delta_per_unit?: number;
+  margin_erosion_pts?: number;
+  impacted_entities?: string[];
+  entity_id?: string;
+  destination_warehouse?: string;
+  affected_warehouse?: string;
+  delay_days?: number;
+  affected_units?: number;
+  affected_cogs_value?: number;
+  vulnerable_skus?: Array<{
+    sku_code?: string;
+    available_stock?: number;
+    days_of_coverage?: number;
+    projected_stockout_day?: number;
+    unmet_gap_days?: number;
+  }>;
+  recommended_action?: string;
 }
 
 export interface ActiveRisksResponse {

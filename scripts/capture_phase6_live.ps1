@@ -58,3 +58,4 @@ foreach ($t in $tabs[0..3]) {
 }
 
 Write-Host "`nAll screenshot captures complete!"
+

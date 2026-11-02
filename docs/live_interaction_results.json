@@ -5,7 +5,7 @@
     "initial_state": "Services running locally, unverified health",
     "action": "GET /api/v1/health to verify system vitality, DB WAL, and RAM usage",
     "expected": "HTTP 200 with status HEALTHY, database ONLINE (SQLite WAL), memory < 350 MB",
-    "actual": "Status=HEALTHY, DB=ONLINE (SQLite WAL), RAM=93.62 MB",
+    "actual": "Status=HEALTHY, DB=ONLINE (SQLite WAL), RAM=199.93 MB",
     "api_status": 200,
     "pass": true
   },
@@ -35,7 +35,7 @@
     "initial_state": "Staging area clean",
     "action": "POST /ingestion/preview with multipart CSV, commit, then verify atomic rollback",
     "expected": "HTTP 200 on preview, commit with rollback token, clean atomic rollback",
-    "actual": "Preview=3 rows, RollbackToken=RB-E9D7EFCBA9, RollbackStatus=ROLLED_BACK",
+    "actual": "Preview=3 rows, RollbackToken=RB-E2CCCA4ECC, RollbackStatus=ROLLED_BACK",
     "api_status": 200,
     "pass": true
   },
@@ -135,7 +135,7 @@
     "initial_state": "Pending capital reallocation of $39,997.50",
     "action": "POST /governance/approve with dual executive approvers",
     "expected": "HTTP 200 returning immutable 64-character SHA-256 digital signature seal",
-    "actual": "Decision=APPROVED, Status=COMMITTED, TwoManSatisfied=True, SHA256=0d0ffac2ddb9d659...",
+    "actual": "Decision=APPROVED, Status=COMMITTED, TwoManSatisfied=True, SHA256=0a1d5cb462a0a8c5...",
     "api_status": 200,
     "pass": true
   },

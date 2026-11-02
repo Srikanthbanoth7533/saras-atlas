@@ -60,6 +60,7 @@ class OperationalRiskSentinel:
                 risks.append({
                     "risk_id": f"risk_delay_{po['po_number']}",
                     "risk_type": "SUPPLIER_INBOUND_DELAY",
+                    "category": "SUPPLY_CHAIN_INBOUND",
                     "severity": severity,
                     "title": f"Shipment Delayed: {po['po_number']} (+{po['delay_days']} Days Port Congestion)",
                     "entity_id": po["po_number"],
@@ -69,6 +70,14 @@ class OperationalRiskSentinel:
                     "affected_units": affected_units,
                     "affected_cogs_value": affected_cogs,
                     "estimated_revenue_exposure": min(est_lost_revenue, 367200.00),
+                    "financial_exposure_estimate": min(est_lost_revenue, 367200.00),
+                    "impacted_entities": [po["po_number"], wh_name] + [s["sku_code"] for s in vulnerable_skus[:2] if s.get("sku_code")],
+                    "recommended_action": "Initiate emergency air freight allocation (1,500 units) and Reno buffer replenishment.",
+                    "description": (
+                        f"Purchase Order {po['po_number']} carrying {affected_units:,} units has been delayed "
+                        f"by {po['delay_days']} days due to maritime port congestion in {po.get('port_of_entry', 'Long Beach')}. "
+                        f"Destination {wh_name} will exhaust available stock prior to vessel arrival."
+                    ),
                     "summary": (
                         f"Purchase Order {po['po_number']} carrying {affected_units:,} units has been delayed "
                         f"by {po['delay_days']} days due to maritime port congestion in {po.get('port_of_entry', 'Long Beach')}. "
@@ -81,6 +90,7 @@ class OperationalRiskSentinel:
         risks.append({
             "risk_id": "risk_freight_inflation_east",
             "risk_type": "CARRIER_LANE_SURCHARGE",
+            "category": "LOGISTICS_SURCHARGE",
             "severity": "HIGH",
             "title": "East Coast Freight Lane Congestion Surcharge (+28%)",
             "entity_id": "LANE_EAST_PARCEL",
@@ -88,6 +98,13 @@ class OperationalRiskSentinel:
             "base_rate": 8.50,
             "surcharged_rate": 10.88,
             "estimated_monthly_freight_inflation": 28400.00,
+            "financial_exposure_estimate": 28400.00,
+            "impacted_entities": ["LANE_EAST_PARCEL", "East Coast 3PL (Allentown, PA)"],
+            "recommended_action": "Audit carrier contract force majeure clauses and shift volume to regional parcel carriers.",
+            "description": (
+                "Domestic parcel carriers have instituted an emergency +28% peak congestion surcharge "
+                "across Eastern fulfillment hubs, inflating standard delivery costs and compressing unit contribution margins."
+            ),
             "summary": (
                 "Domestic parcel carriers have instituted an emergency +28% peak congestion surcharge "
                 "across Eastern fulfillment hubs, inflating standard delivery costs and compressing unit contribution margins."
@@ -98,12 +115,22 @@ class OperationalRiskSentinel:
         risks.append({
             "risk_id": "risk_cross_zone_penalty",
             "risk_type": "OUT_OF_ZONE_EXPEDITED_DRAIN",
+            "category": "INVENTORY_STOCKOUT",
             "severity": "CRITICAL",
             "title": "Cross-Zone Fallback Fulfillment Hazard (Zone 8 Penalty)",
             "entity_id": "CROSS_ZONE_ROUTING",
             "trigger_condition": "West Coast 3PL Stockout",
             "cost_delta_per_unit": 13.00,  # $21.50 vs $8.50
             "margin_erosion_pts": 7.22,
+            "estimated_revenue_exposure": 130000.00,
+            "financial_exposure_estimate": 130000.00,
+            "impacted_entities": ["CROSS_ZONE_ROUTING", "West Coast 3PL", "Zone 8 Shipping"],
+            "recommended_action": "Throttle ad spend on western regional campaigns (-18%) to prevent cross-zone margin drain.",
+            "description": (
+                "When West Coast inventory depletes, automated OMS routing will force Allentown to fulfill "
+                "Western US orders via Carrier Zone 8. Parcel shipping escalates from $8.50 to $21.50 per unit, "
+                "destroying net contribution margin."
+            ),
             "summary": (
                 "When West Coast inventory depletes, automated OMS routing will force Allentown to fulfill "
                 "Western US orders via Carrier Zone 8. Parcel shipping escalates from $8.50 to $21.50 per unit, "
