@@ -2,18 +2,35 @@
 
 import React from "react";
 import { Badge } from "@/components/ui/Badge";
-import { Activity, ShieldCheck, Database, Cpu, RefreshCw } from "lucide-react";
+import {
+  Activity,
+  ShieldCheck,
+  Database,
+  Cpu,
+  RefreshCw,
+  Play,
+  Info,
+  Sparkles,
+} from "lucide-react";
 import { SystemHealth } from "@/lib/types";
 
 interface HeaderProps {
   health: SystemHealth | null;
   onRefresh?: () => void;
   isRefreshing?: boolean;
+  onOpenOverview?: () => void;
+  onOpenDemo?: () => void;
 }
 
-export function Header({ health, onRefresh, isRefreshing }: HeaderProps) {
+export function Header({
+  health,
+  onRefresh,
+  isRefreshing,
+  onOpenOverview,
+  onOpenDemo,
+}: HeaderProps) {
   return (
-    <header className="border-b border-white/[0.08] bg-command-950/90 backdrop-blur-md sticky top-0 z-50">
+    <header className="border-b border-white/[0.08] bg-command-950/95 backdrop-blur-md sticky top-0 z-50">
       {/* Prominent Demonstration & Attribution Banner */}
       <div className="bg-amber-950/50 border-b border-amber-500/30 px-6 py-1.5 text-[11px] text-amber-200/90 flex items-center justify-between flex-wrap gap-2">
         <div className="flex items-center gap-2">
@@ -29,38 +46,64 @@ export function Header({ health, onRefresh, isRefreshing }: HeaderProps) {
         </div>
       </div>
 
-      <div className="px-6 py-3.5 flex flex-col md:flex-row md:items-center justify-between gap-3">
+      <div className="px-6 py-3 flex flex-col lg:flex-row lg:items-center justify-between gap-3">
         {/* Brand & Platform Identity */}
-        <div className="flex items-center gap-3.5">
-          <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-cyan-500 to-indigo-600 flex items-center justify-center shadow-[0_0_20px_rgba(6,182,212,0.4)]">
+        <div className="flex items-start sm:items-center gap-3.5">
+          <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-cyan-500 to-indigo-600 flex items-center justify-center shadow-[0_0_20px_rgba(6,182,212,0.4)] shrink-0 mt-0.5 sm:mt-0">
             <Activity className="h-5 w-5 text-white animate-pulse" />
           </div>
           <div>
-            <div className="flex items-center gap-2.5">
-              <h1 className="text-lg font-black tracking-wider text-white uppercase font-mono">
+            <div className="flex items-center gap-2 flex-wrap">
+              <h1 className="text-base sm:text-lg font-black tracking-wider text-white uppercase font-mono">
                 SARAS ATLAS
               </h1>
+              <span className="text-slate-400 font-normal hidden sm:inline">—</span>
+              <span className="text-xs sm:text-sm font-semibold text-cyan-300">
+                Commerce Resilience &amp; Decision Intelligence
+              </span>
               <Badge variant="cyan" size="sm">
-                PHASE 2 COCKPIT
+                v6.0 ENTERPRISE
               </Badge>
-              <Badge variant="outline" size="sm" className="hidden sm:inline-flex text-slate-400">
-                SYNTHETIC BENCHMARK
+              <Badge variant="outline" size="sm" className="hidden xl:inline-flex text-slate-400">
+                SYNTHETIC BENCHMARK ($45M GMV)
               </Badge>
             </div>
-            <p className="text-xs text-slate-400">
-              Commerce Resilience & Decision Simulation Platform • Vanguard Apparel Co. ($45M GMV)
+            <p className="text-xs text-slate-400 mt-0.5 font-sans">
+              Model operational disruptions. Quantify financial exposure. Optimize mitigation decisions.
             </p>
           </div>
         </div>
 
-        {/* System Vitals & Health Indicators */}
+        {/* Action Controls & System Vitals */}
         <div className="flex items-center flex-wrap gap-2.5">
-          <div className="hidden lg:flex items-center gap-2 bg-command-900 border border-white/[0.06] rounded-lg px-3 py-1.5 text-xs text-slate-300 font-mono">
+          {/* Executive Overview & Guided Demo Buttons */}
+          {onOpenOverview && (
+            <button
+              onClick={onOpenOverview}
+              className="px-3 py-1.5 rounded-lg bg-command-900 hover:bg-command-800 border border-white/[0.08] text-slate-200 hover:text-white text-xs font-semibold flex items-center gap-1.5 transition-colors"
+            >
+              <Info className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Platform Overview</span>
+            </button>
+          )}
+
+          {onOpenDemo && (
+            <button
+              onClick={onOpenDemo}
+              className="px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-transform hover:scale-[1.02]"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+              <span>Executive Demo</span>
+            </button>
+          )}
+
+          {/* System Vitals Badge */}
+          <div className="hidden lg:flex items-center gap-2 bg-command-900 border border-white/[0.06] rounded-lg px-2.5 py-1.5 text-xs text-slate-300 font-mono">
             <Database className="w-3.5 h-3.5 text-cyan-400" />
             <span>SQLite WAL</span>
             <span className="text-slate-600">•</span>
             <Cpu className="w-3.5 h-3.5 text-indigo-400" />
-            <span>OR-Tools SCIP</span>
+            <span>SCIP MILP</span>
             {health?.memory?.process_working_set_mb && (
               <>
                 <span className="text-slate-600">•</span>
@@ -91,4 +134,3 @@ export function Header({ health, onRefresh, isRefreshing }: HeaderProps) {
     </header>
   );
 }
-

@@ -71,11 +71,20 @@ export default function RootCauseAnalysis() {
               through fulfillment inventory depletion down to bottom-line GAAP contribution margin loss.
             </p>
           </div>
-          <div className="text-right">
-            <span className="text-xs text-slate-400 block">Total Attributed Financial Loss</span>
-            <span className="text-2xl font-mono font-bold text-rose-400">
-              {data ? `$${data.total_financial_impact.toLocaleString()}` : "$224,500.00"}
-            </span>
+          <div className="text-right space-y-1">
+            <div className="flex items-baseline justify-end gap-2">
+              <span className="text-xs text-slate-400">Gross Commercial Exposure:</span>
+              <span className="text-xl font-mono font-bold text-rose-400">
+                {data ? `$${data.total_financial_impact.toLocaleString()}` : "$224,500.00"}
+              </span>
+            </div>
+            <div className="flex items-baseline justify-end gap-2">
+              <span className="text-xs text-emerald-400 font-semibold">Net GAAP CM Erosion:</span>
+              <span className="text-sm font-mono font-bold text-emerald-400">
+                -$129,844.32
+              </span>
+              <span className="text-[10px] text-slate-400">(Variable Savings: $94,655.68)</span>
+            </div>
           </div>
         </div>
       </div>

@@ -73,7 +73,7 @@ export function SituationRoom({
                 Inbound shipment <strong className="text-white">PO-9012</strong> (10,000 units of Hero SKU Apex Jacket) is delayed at Long Beach Port. 
                 Reno 3PL runs out of stock on Day 9. Without mitigation, cross-zone fallback drains Allentown, causing a{" "}
                 <span className="text-rose-400 font-bold">10-day national stockout</span> and destroying{" "}
-                <span className="text-rose-400 font-bold">$290k+ in net contribution margin</span>.
+                <span className="text-rose-400 font-bold">$224,500.00 in gross revenue ($129,844.32 net CM erosion)</span>.
               </p>
             </div>
           </div>

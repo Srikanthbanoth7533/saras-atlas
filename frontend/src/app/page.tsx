@@ -20,6 +20,8 @@ import RootCauseAnalysis from "@/components/modules/RootCauseAnalysis";
 import ForecastingStudio from "@/components/modules/ForecastingStudio";
 import ExecutiveReportingCenter from "@/components/modules/ExecutiveReportingCenter";
 import EnterpriseConnectors from "@/components/modules/EnterpriseConnectors";
+import { ProductOverviewModal } from "@/components/layout/ProductOverviewModal";
+import { GuidedDemoModal } from "@/components/demo/GuidedDemoModal";
 
 import {
   getSystemHealth,
@@ -50,6 +52,8 @@ import {
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<ActiveTab>("situation_room");
+  const [isOverviewOpen, setIsOverviewOpen] = useState(false);
+  const [isDemoOpen, setIsDemoOpen] = useState(false);
 
   // State from API
   const [health, setHealth] = useState<SystemHealth | null>(null);
@@ -247,7 +251,13 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-command-950 text-slate-100">
       {/* Platform Header */}
-      <Header health={health} onRefresh={loadInitialData} isRefreshing={isRefreshing} />
+      <Header
+        health={health}
+        onRefresh={loadInitialData}
+        isRefreshing={isRefreshing}
+        onOpenOverview={() => setIsOverviewOpen(true)}
+        onOpenDemo={() => setIsDemoOpen(true)}
+      />
 
       {/* Main Tab Navigation */}
       <TabNavigation
@@ -384,6 +394,22 @@ export default function Home() {
       <footer className="border-t border-white/[0.06] bg-command-950 py-3 px-6 text-center text-xs text-slate-500 font-mono">
         SARAS ATLAS Enterprise Intelligence Platform • Zero-Cost Local Monolith • Target RAM &lt; 350 MB RSS • Vanguard Apparel Co. Benchmark
       </footer>
+
+      {/* Enterprise Product Overview & Identity Modal */}
+      <ProductOverviewModal
+        isOpen={isOverviewOpen}
+        onClose={() => setIsOverviewOpen(false)}
+        onNavigateTab={handleTabChange}
+        onStartGuidedDemo={() => setIsDemoOpen(true)}
+      />
+
+      {/* Guided Executive Demonstration Tour */}
+      <GuidedDemoModal
+        isOpen={isDemoOpen}
+        onClose={() => setIsDemoOpen(false)}
+        activeTab={activeTab}
+        onNavigateTab={handleTabChange}
+      />
     </div>
   );
 }
