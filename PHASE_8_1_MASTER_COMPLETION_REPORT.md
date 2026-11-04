@@ -110,3 +110,4 @@ $$\max \quad \mathcal{J} = (P_i - \text{COGS}_{\text{landed}} - C_{\text{air}}) 
 - **E2E Workflow Audit (`scripts/verify_full_e2e_workflow.py`):** 14/14 steps PASSED (0.74s)
 - **PDF/CSV Parity Test (`scripts/verify_pdf_csv_reconciliation.py`):** 100% PASSED (3.12s)
 - **Cumulative Expenditure:** ₹0.00
+
