@@ -201,3 +201,4 @@ Both options strictly require ₹0, preserve all database backups, and guarantee
 | **Public Frontend** | **`https://saras-atlas.vercel.app`** | **ONLINE (READY)** |
 | **Public Backend** | **`https://saras-atlas-backend.onrender.com`** | **ONLINE (HEALTHY)** |
 | **GitHub Repository** | `https://github.com/Srikanthbanoth7533/saras-atlas` | **UP TO DATE** |
+

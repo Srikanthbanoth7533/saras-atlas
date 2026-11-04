@@ -97,3 +97,4 @@ def audit_compatibility():
 if __name__ == "__main__":
     success = audit_compatibility()
     sys.exit(0 if success else 1)
+
