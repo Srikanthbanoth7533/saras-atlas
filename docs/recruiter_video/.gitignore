@@ -1,0 +1,3 @@
+# Exclude full-length video binary (> 40MB) to preserve lean Git repository history
+saras_atlas_full_walkthrough.mp4
+temp_render/

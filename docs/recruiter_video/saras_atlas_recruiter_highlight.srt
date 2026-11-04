@@ -1,0 +1,103 @@
+1
+00:00:00,000 --> 00:00:04,553
+Hi, I am Srikanth Banoth, and this is SARAS ATLAS—a
+
+2
+00:00:04,553 --> 00:00:09,107
+commerce resilience and decision intelligence platform that turns supply chain
+
+3
+00:00:09,107 --> 00:00:13,660
+disruptions into mathematically optimized, financially reconciled decisions.
+
+4
+00:00:13,660 --> 00:00:18,240
+In our synthetic scenario, a twenty-one-day supplier delay threatens five
+
+5
+00:00:18,240 --> 00:00:22,820
+thousand units of inventory. Rather than just reporting lost sales,
+
+6
+00:00:22,820 --> 00:00:27,400
+ATLAS decomposes our total two hundred twenty-four thousand, five hundred
+
+7
+00:00:27,400 --> 00:00:31,980
+dollar gross exposure into five distinct root causes—including maritime surcharges,
+
+8
+00:00:31,980 --> 00:00:36,560
+cross-zone shipping spillovers, and wasted digital ad burn.
+
+9
+00:00:36,560 --> 00:00:40,160
+To mitigate the crisis, we formulate a Mixed-Integer Linear Program
+
+10
+00:00:40,160 --> 00:00:43,760
+solved with Google OR-Tools and SCIP. Under a strict forty
+
+11
+00:00:43,760 --> 00:00:47,360
+thousand dollar capital budget, the solver proves the optimal policy:
+
+12
+00:00:47,360 --> 00:00:50,960
+exhaust eight hundred units of cheap ground transfer, allocate two
+
+13
+00:00:50,960 --> 00:00:54,560
+thousand nine hundred ninety-five units of air freight, and retain
+
+14
+00:00:54,560 --> 00:00:58,160
+full ad velocity, investing thirty-nine thousand, nine hundred ninety-seven dollars
+
+15
+00:00:58,160 --> 00:01:01,760
+and fifty cents with just two dollars and fifty cents
+
+16
+00:01:01,760 --> 00:01:05,360
+in budget slack.
+
+17
+00:01:05,360 --> 00:01:09,492
+Our financial waterfall reconciles gross revenue against ninety-four thousand, six
+
+18
+00:01:09,492 --> 00:01:13,623
+hundred dollars of avoided variable costs, protecting one hundred twenty-nine
+
+19
+00:01:13,623 --> 00:01:17,755
+thousand, eight hundred forty-four dollars of true net contribution margin—a
+
+20
+00:01:17,755 --> 00:01:21,887
+three point two five X ROI. And because capital exceeds
+
+21
+00:01:21,887 --> 00:01:26,018
+twenty-five thousand dollars, our Two-Man Rule requires cryptographic dual-officer sign-off
+
+22
+00:01:26,018 --> 00:01:30,150
+before execution.
+
+23
+00:01:30,150 --> 00:01:35,255
+Built with Next.js fifteen, FastAPI, DuckDB, SQLite WAL, and OR-Tools,
+
+24
+00:01:35,255 --> 00:01:40,360
+the entire backend runs on less than fifty megabytes of
+
+25
+00:01:40,360 --> 00:01:45,465
+RAM. Check out the live application at saras-atlas.vercel.app or inspect
+
+26
+00:01:45,465 --> 00:01:50,570
+the open-source codebase on GitHub. Thank you!

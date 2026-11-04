@@ -509,3 +509,4 @@ In addition, it creates 1,827 units of safety buffer inventory.
 
 #### Q135: What was the most difficult engineering challenge you solved on this project?
 **Answer:** Reconciling mathematical precision with real-world enterprise constraints: ensuring that the OR-Tools SCIP MILP formulation, the discrete difference 90-day daily accounting simulation, the vector PDF export, and the RFC-4180 CSV spreadsheet all produced 100% identical financial figures ($224,500.00 gross exposure and $129,844.32 net margin) while executing under a strict zero-dollar cloud budget with zero browser console errors.
+

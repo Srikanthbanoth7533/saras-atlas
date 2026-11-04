@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    background: radial-gradient(circle at 50% 20%, #0F172A 0%, #070A12 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #F8FAFC;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 80px;
+    position: relative;
+  }
+  .grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  .glow-cyan {
+    text-shadow: 0 0 40px rgba(56, 189, 248, 0.4);
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 9999px;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: #38BDF8;
+    font-family: ui-monospace, monospace;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .card {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 24px 28px;
+    backdrop-filter: blur(12px);
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, #FFFFFF 0%, #38BDF8 60%, #818CF8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .footer-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 24px;
+    font-size: 15px;
+    color: #64748B;
+    font-family: ui-monospace, monospace;
+  }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+  <div style="z-index: 1;">
+    <div class="badge">Systems Engineering Blueprint</div>
+    <h1 style="font-size: 64px; font-weight: 800; letter-spacing: -0.02em; margin-top: 16px;" class="gradient-text">
+      Technical Architecture & Stack
+    </h1>
+    <p style="font-size: 22px; color: #94A3B8; margin-top: 8px;">
+      Zero-cost in-process modular monolith delivering sub-15ms solver latency on &lt; 50 MB RAM.
+    </p>
+  </div>
+
+  <div style="z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 24px;">
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-family: ui-monospace, monospace; color: #38BDF8; font-weight: bold; font-size: 13px;">EDGE CLIENT TIER</span>
+        <span style="background: rgba(56,189,248,0.15); color: #38BDF8; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-family: ui-monospace, monospace;">VERCEL</span>
+      </div>
+      <div style="font-size: 22px; font-weight: 700; margin-top: 10px;">Next.js 15 & React 19</div>
+      <ul style="font-size: 14px; color: #94A3B8; margin-top: 12px; line-height: 1.8; list-style-position: inside;">
+        <li>App Router with TypeScript & Tailwind CSS</li>
+        <li>16 responsive decision & telemetry modules</li>
+        <li>Lucide UI + Recharts analytical charts</li>
+        <li>Single-origin edge rewrites (Zero-CORS)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-family: ui-monospace, monospace; color: #818CF8; font-weight: bold; font-size: 13px;">APPLICATION ENGINE</span>
+        <span style="background: rgba(129,140,248,0.15); color: #818CF8; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-family: ui-monospace, monospace;">RENDER</span>
+      </div>
+      <div style="font-size: 22px; font-weight: 700; margin-top: 10px;">Python 3.12 & FastAPI</div>
+      <ul style="font-size: 14px; color: #94A3B8; margin-top: 12px; line-height: 1.8; list-style-position: inside;">
+        <li>Pydantic v2 strict request/response contracts</li>
+        <li>SQLAlchemy 2.0 ORM with connection pooling</li>
+        <li>Holt-Winters & Ridge regression demand engine</li>
+        <li>ReportLab PDF & CSV executive generators</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-family: ui-monospace, monospace; color: #10B981; font-weight: bold; font-size: 13px;">STORAGE & SOLVER CORE</span>
+        <span style="background: rgba(16,185,129,0.15); color: #10B981; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-family: ui-monospace, monospace;">EMBEDDED</span>
+      </div>
+      <div style="font-size: 22px; font-weight: 700; margin-top: 10px;">OR-Tools SCIP & DuckDB</div>
+      <ul style="font-size: 14px; color: #94A3B8; margin-top: 12px; line-height: 1.8; list-style-position: inside;">
+        <li>Google OR-Tools SCIP 9.0 integer solver</li>
+        <li>SQLite Write-Ahead Logging (WAL) concurrency</li>
+        <li>DuckDB in-process columnar analytical engine</li>
+        <li>Total Process RSS Memory: <strong>50.0 MB</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bar" style="z-index: 1;">
+    <div>Architecture: In-Process Modular Monolith • Latency: &lt; 15ms • Budget: $0.00 Cloud Tier</div>
+    <div style="color: #10B981;">100% Type-Safe & Zero Memory Leaks</div>
+  </div>
+
+</body>
+</html>

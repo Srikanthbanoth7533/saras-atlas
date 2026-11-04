@@ -233,3 +233,4 @@ An independent duality gap of 0.00488% proves that the integer allocation $(2,99
 3. **Why $2.50 unused budget?** $2.50 is the remainder from integer division ($37,440 \pmod{12.50} = 2.50$). Buying one more unit requires $12.50, exceeding the $40,000.00 ceiling.
 4. **Why 0% ad throttle?** Replenishment volume (3,795 units) exceeds demand deficit (1,968 units). Throttling ads would incur an unnecessary $-\$2,500$ penalty.
 5. **Why $39,997.50 capital vs $25,000 policy threshold?** The CFO budget ceiling for the solver is $40,000.00. Because the optimal outlay ($39,997.50) exceeds the $25,000.00 governance threshold, the Two-Man Rule dual executive sign-off is automatically triggered.
+

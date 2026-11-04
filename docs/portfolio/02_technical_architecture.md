@@ -260,3 +260,4 @@ To maintain technical credibility during engineering evaluations, this section f
 - **Multi-Cloud Tenant Isolation:** Currently modeled as a multi-role single-tenant enterprise (Vanguard Apparel Co.); multi-tenant PostgreSQL schema partitioning is an architectural roadmap item.
 - **Real-Time Carrier Webhook Stream:** Inbound ocean delays are simulated via shock injection parameters rather than active EDI 214/315 automated carrier webhooks.
 - **Deep Reinforcement Learning (PPO) Policy:** Policy optimization currently evaluates stochastic Monte Carlo parameter sweeps over standard heuristic suites; continuous-action DRL policies are planned for v7.0.
+

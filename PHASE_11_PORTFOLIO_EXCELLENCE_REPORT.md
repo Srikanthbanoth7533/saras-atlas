@@ -134,3 +134,4 @@ SARAS ATLAS is now a **premier, technically credible, publication-ready portfoli
 1. Review the tailored resume bullet points in [`docs/portfolio/05_recruiter_portfolio_package.md`](file:///c:/Users/DELL/saras-atlas/docs/portfolio/05_recruiter_portfolio_package.md) and incorporate them into your resume and LinkedIn profile.
 2. Practice the 2-minute and 5-minute pitches from [`docs/portfolio/06_interview_preparation_mastery.md`](file:///c:/Users/DELL/saras-atlas/docs/portfolio/06_interview_preparation_mastery.md) aloud prior to upcoming interviews.
 3. Share the live production link (**`https://saras-atlas.vercel.app`**) on your portfolio, GitHub profile, and job applications.
+

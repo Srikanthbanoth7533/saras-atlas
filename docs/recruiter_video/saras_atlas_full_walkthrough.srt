@@ -1,0 +1,763 @@
+1
+00:00:00,000 --> 00:00:05,631
+Hello, and welcome. My name is Srikanth Banoth, and today I am
+
+2
+00:00:05,631 --> 00:00:11,262
+demonstrating SARAS ATLAS—a full-stack commerce resilience and decision intelligence platform. Modern omnichannel
+
+3
+00:00:11,262 --> 00:00:16,893
+commerce businesses operate across complex networks of overseas suppliers, cross-dock facilities, regional
+
+4
+00:00:16,893 --> 00:00:22,524
+fulfillment centers, and volatile consumer demand. In this environment, a single supply
+
+5
+00:00:22,524 --> 00:00:28,155
+chain disruption—such as a delayed factory shipment or port congestion—does not stay
+
+6
+00:00:28,155 --> 00:00:33,786
+isolated. It triggers a cascading failure: inventory runs dry, fulfillment centers spill
+
+7
+00:00:33,786 --> 00:00:39,417
+orders across high-cost shipping zones, digital marketing spend continues driving traffic to
+
+8
+00:00:39,417 --> 00:00:45,048
+empty product pages, and customer satisfaction drops. Traditional business intelligence dashboards are
+
+9
+00:00:45,048 --> 00:00:50,679
+fundamentally backward-looking: they tell executives what happened yesterday. But when a crisis
+
+10
+00:00:50,679 --> 00:00:56,311
+hits, operators need answers to six critical forward-looking questions: Why did this
+
+11
+00:00:56,311 --> 00:01:01,942
+disruption occur? What will happen across our nodes over the next thirty
+
+12
+00:01:01,942 --> 00:01:07,573
+days? What is our exact financial exposure? What is the mathematically optimal
+
+13
+00:01:07,573 --> 00:01:13,204
+corrective action? How much capital will that intervention require? And who holds
+
+14
+00:01:13,204 --> 00:01:18,835
+governance authority to approve it? SARAS ATLAS was engineered to connect these
+
+15
+00:01:18,835 --> 00:01:24,466
+questions into a single, closed-loop decision workflow. Before we dive into the
+
+16
+00:01:24,466 --> 00:01:30,097
+live application, a brief disclosure: this is an independent portfolio project demonstrated
+
+17
+00:01:30,097 --> 00:01:35,728
+on synthetic commerce data representing Vanguard Apparel Company, a forty-five million dollar
+
+18
+00:01:35,728 --> 00:01:41,359
+apparel merchant. It is not affiliated with or endorsed by Saras Analytics.
+
+19
+00:01:41,359 --> 00:01:46,990
+Let us now open the live production application deployed at saras-atlas.vercel.app.
+
+20
+00:01:46,990 --> 00:01:52,257
+Here on the live production application, we land on the Executive Command
+
+21
+00:01:52,257 --> 00:01:57,525
+Center. Rather than overwhelming leadership with raw telemetry, the command center aggregates
+
+22
+00:01:57,525 --> 00:02:02,792
+high-level operational and financial health into four primary indicators. At the top
+
+23
+00:02:02,792 --> 00:02:08,059
+left, we immediately see our total active commercial exposure: two hundred twenty-four
+
+24
+00:02:08,059 --> 00:02:13,326
+thousand, five hundred dollars. Next to it, the platform surfaces the net
+
+25
+00:02:13,326 --> 00:02:18,594
+contribution margin at risk—one hundred twenty-nine thousand, eight hundred forty-four dollars and
+
+26
+00:02:18,594 --> 00:02:23,861
+thirty-two cents. Notice how the interface immediately distinguishes between top-line revenue exposed
+
+27
+00:02:23,861 --> 00:02:29,128
+and true bottom-line margin erosion. The system signals an active supply chain
+
+28
+00:02:29,128 --> 00:02:34,395
+bottleneck, with overall network resilience tracked at eighty-eight point four percent. Below
+
+29
+00:02:34,395 --> 00:02:39,663
+the metrics, real-time alerts pinpoint active purchase order anomalies, supplier delays, and
+
+30
+00:02:39,663 --> 00:02:44,930
+inventory thresholds across our distribution nodes.
+
+31
+00:02:44,930 --> 00:02:50,344
+To understand where vulnerabilities lie, we move to the Digital Twin and
+
+32
+00:02:50,344 --> 00:02:55,758
+Network Topology view. Here, the platform models Vanguard Apparel's physical supply chain
+
+33
+00:02:55,758 --> 00:03:01,172
+as a directed graph. In this synthetic business scenario, tier-one manufacturing partners
+
+34
+00:03:01,172 --> 00:03:06,586
+in Ningbo and Ho Chi Minh City ship finished apparel across ocean
+
+35
+00:03:06,586 --> 00:03:12,000
+corridors into the Port of Los Angeles. From there, inventory flows inland
+
+36
+00:03:12,000 --> 00:03:17,414
+to our Central Distribution Center in Dallas, Texas, which replenishes regional fulfillment
+
+37
+00:03:17,414 --> 00:03:22,828
+centers in Allentown, Pennsylvania, and Reno, Nevada. Every node tracks holding capacity,
+
+38
+00:03:22,828 --> 00:03:28,242
+inbound velocity, lead-time variance, and handling unit costs. By modeling the relationships
+
+39
+00:03:28,242 --> 00:03:33,656
+between suppliers, purchase orders, and multi-echelon stock points, SARAS ATLAS can simulate
+
+40
+00:03:33,656 --> 00:03:39,070
+how a shock at the supplier tier propagates downstream into fulfillment zones.
+
+41
+00:03:39,070 --> 00:03:44,401
+Moving to Risk Monitoring, SARAS ATLAS tracks leading operational risk indicators before
+
+42
+00:03:44,401 --> 00:03:49,732
+they manifest as customer stockouts. In our supplier scorecard, our primary vendor,
+
+43
+00:03:49,732 --> 00:03:55,063
+Pacific Mills, has breached safety tolerances with an average lead-time variance of
+
+44
+00:03:55,063 --> 00:04:00,394
+plus-twenty-one days. The platform calculates a composite supplier reliability index based on
+
+45
+00:04:00,394 --> 00:04:05,726
+on-time in-full delivery rates, ocean transit dwell times, and customs clearance volatility.
+
+46
+00:04:05,726 --> 00:04:11,057
+Notice that while domestic vendors like Nordic Fleece remain stable, Pacific Mills
+
+47
+00:04:11,057 --> 00:04:16,388
+is flagged in high-risk red. The system alerts us that Purchase Order
+
+48
+00:04:16,388 --> 00:04:21,719
+PO-9012—containing five thousand units of our flagship Performance Heather Tees—is stalled at
+
+49
+00:04:21,719 --> 00:04:27,050
+port, directly threatening our fourth-quarter peak sales volume.
+
+50
+00:04:27,050 --> 00:04:32,872
+When an alert fires, operators don't need raw guesswork; they need Root
+
+51
+00:04:32,872 --> 00:04:38,693
+Cause Analysis. The RCA engine breaks down the total two hundred twenty-four
+
+52
+00:04:38,693 --> 00:04:44,515
+thousand, five hundred dollar commercial exposure into five mutually exclusive, collectively exhaustive
+
+53
+00:04:44,515 --> 00:04:50,337
+loss categories: First, Direct Stockout Losses: ninety-eight thousand, seven hundred eighty dollars
+
+54
+00:04:50,337 --> 00:04:56,158
+in unfulfilled consumer demand. Second, Expedited Maritime Surcharges: fifty-four thousand dollars in
+
+55
+00:04:56,158 --> 00:05:01,980
+detention, demurrage, and emergency container priority fees. Third, Cross-Zone Spillover: forty-five thousand,
+
+56
+00:05:01,980 --> 00:05:07,802
+six hundred twenty dollars incurred when our East Hub stocks out, forcing
+
+57
+00:05:07,802 --> 00:05:13,623
+West Hub to ship across country at peak parcel rates. Fourth, Ad
+
+58
+00:05:13,623 --> 00:05:19,445
+Spend Burn: eighteen thousand, one hundred dollars in digital advertising dollars that
+
+59
+00:05:19,445 --> 00:05:25,267
+continue bidding on out-of-stock SKUs with zero conversion. And fifth, Split-Order Handling:
+
+60
+00:05:25,267 --> 00:05:31,088
+eight thousand dollars in warehouse pick-pack penalties for multi-item baskets split across
+
+61
+00:05:31,088 --> 00:05:36,910
+facilities. Every dollar is mathematically attributed to PO-9012's twenty-one-day supplier slip.
+
+62
+00:05:36,910 --> 00:05:42,788
+Accurate loss calculation requires rigorous Demand Forecasting. In the forecasting studio, SARAS
+
+63
+00:05:42,788 --> 00:05:48,666
+ATLAS evaluates baseline sales velocity across daily, weekly, and promotional cadences. Rather
+
+64
+00:05:48,666 --> 00:05:54,543
+than using toy moving averages, the platform implements two distinct statistical models:
+
+65
+00:05:54,543 --> 00:06:00,421
+an additive Holt-Winters Triple Exponential Smoothing engine for seasonal capture, and an
+
+66
+00:06:00,421 --> 00:06:06,299
+L2-regularized Ridge regression model incorporating price elasticity and promotional flags. The system
+
+67
+00:06:06,299 --> 00:06:12,177
+evaluates model performance using Weighted Absolute Percentage Error—or WAPE—achieving eleven point eight
+
+68
+00:06:12,177 --> 00:06:18,054
+percent on the active SKU. By generating probabilistic demand bounds with eighty
+
+69
+00:06:18,054 --> 00:06:23,932
+percent and ninety-five percent confidence bands, the system feeds realistic, risk-adjusted demand
+
+70
+00:06:23,932 --> 00:06:29,810
+projections directly into downstream inventory and optimization models.
+
+71
+00:06:29,810 --> 00:06:34,671
+Now let us examine the Inventory Dynamics. Here we see the multi-echelon
+
+72
+00:06:34,671 --> 00:06:39,532
+stock trajectory for SKU-001. Under normal conditions, our safety stock buffer maintains
+
+73
+00:06:39,532 --> 00:06:44,393
+twelve hundred units at Dallas Central. However, with PO-9012 delayed by twenty-one
+
+74
+00:06:44,393 --> 00:06:49,254
+days, current inventory is depleting at one hundred twelve units per day.
+
+75
+00:06:49,254 --> 00:06:54,116
+The platform calculates that Dallas Central will completely breach safety stock within
+
+76
+00:06:54,116 --> 00:06:58,977
+four days and hit hard stockout in exactly nine days. Once Dallas
+
+77
+00:06:58,977 --> 00:07:03,838
+stocks out, regional hubs deplete their local buffers, triggering the cross-zone shipping
+
+78
+00:07:03,838 --> 00:07:08,699
+surcharges and stockouts we saw in the RCA module. Time is of
+
+79
+00:07:08,699 --> 00:07:13,560
+the essence.
+
+80
+00:07:13,560 --> 00:07:19,207
+Before committing capital, supply chain directors can run What-If Disruption Simulations. The
+
+81
+00:07:19,207 --> 00:07:24,854
+simulator lets operators test scenarios dynamically. If Pacific Mills slips by twenty-eight
+
+82
+00:07:24,854 --> 00:07:30,501
+days instead of twenty-one, financial exposure jumps from two hundred twenty-four thousand
+
+83
+00:07:30,501 --> 00:07:36,149
+dollars to over two hundred ninety thousand dollars. Conversely, if consumer demand
+
+84
+00:07:36,149 --> 00:07:41,796
+cools by ten percent, our existing inventory buffer extends our stockout runway
+
+85
+00:07:41,796 --> 00:07:47,443
+by five critical days. This interactive simulation engine enables leadership to stress-test
+
+86
+00:07:47,443 --> 00:07:53,090
+their operational resilience against severe macro volatility before deciding on an intervention.
+
+87
+00:07:53,090 --> 00:07:58,073
+Now we arrive at the intellectual core of SARAS ATLAS: Mathematical Optimization.
+
+88
+00:07:58,073 --> 00:08:03,056
+Faced with a stockout, most companies rely on rules of thumb or
+
+89
+00:08:03,056 --> 00:08:08,040
+intuition. SARAS ATLAS formulates the mitigation decision as a rigorous Mixed-Integer Linear
+
+90
+00:08:08,040 --> 00:08:13,023
+Program, solved using Google OR-Tools and the SCIP solver. Let us look
+
+91
+00:08:13,023 --> 00:08:18,006
+at the problem formulation: We have two transport levers: expedited air freight
+
+92
+00:08:18,006 --> 00:08:22,989
+at twelve dollars and fifty cents per unit, which yields fifty-eight dollars
+
+93
+00:08:22,989 --> 00:08:27,972
+and eighty-three cents in net contribution margin, and expedited ground transfer from
+
+94
+00:08:27,972 --> 00:08:32,956
+our secondary hub at three dollars and twenty cents per unit, which
+
+95
+00:08:32,956 --> 00:08:37,939
+yields eighty-one dollars and thirteen cents in net margin. We face a
+
+96
+00:08:37,939 --> 00:08:42,922
+strict working-capital budget of forty thousand dollars, and ground inventory is physically
+
+97
+00:08:42,922 --> 00:08:47,905
+capped at eight hundred available units. Notice what the solver does: Because
+
+98
+00:08:47,905 --> 00:08:52,888
+ground transfer provides a higher return on capital—delivering over twenty-five dollars of
+
+99
+00:08:52,888 --> 00:08:57,872
+margin per dollar spent—the solver exhausts the entire eight hundred-unit ground capacity
+
+100
+00:08:57,872 --> 00:09:02,855
+first, consuming two thousand five hundred sixty dollars. With the remaining thirty-seven
+
+101
+00:09:02,855 --> 00:09:07,838
+thousand four hundred forty dollars of budget, it allocates capital to expedited
+
+102
+00:09:07,838 --> 00:09:12,821
+air freight at twelve-fifty per unit. Thirty-seven thousand four hundred forty divided
+
+103
+00:09:12,821 --> 00:09:17,804
+by twelve-fifty equals twenty-nine ninety-five point two units. Because air freight must
+
+104
+00:09:17,804 --> 00:09:22,788
+be booked in integer units, the solver commits to exactly two thousand
+
+105
+00:09:22,788 --> 00:09:27,771
+nine hundred ninety-five air units, spending thirty-seven thousand four hundred thirty-seven dollars
+
+106
+00:09:27,771 --> 00:09:32,754
+and fifty cents. Total capital expenditure: thirty-nine thousand, nine hundred ninety-seven dollars
+
+107
+00:09:32,754 --> 00:09:37,737
+and fifty cents. Remaining budget slack: exactly two dollars and fifty cents—because
+
+108
+00:09:37,737 --> 00:09:42,720
+two dollars and fifty cents cannot purchase another twelve-dollar-fifty air freight unit.
+
+109
+00:09:42,720 --> 00:09:47,704
+Ad throttling remains at zero percent because maintaining full marketing velocity is
+
+110
+00:09:47,704 --> 00:09:52,687
+more profitable than throttling spend once inventory is replenished. This is not
+
+111
+00:09:52,687 --> 00:09:57,670
+heuristic guessing; this is provably optimal mathematical decision-making.
+
+112
+00:09:57,670 --> 00:10:03,016
+A frequent trap in supply chain leadership is conflating gross revenue with
+
+113
+00:10:03,016 --> 00:10:08,362
+net profitability. In our Financial Waterfall and Reconciliation module, SARAS ATLAS ensures
+
+114
+00:10:08,362 --> 00:10:13,708
+total accounting precision. While gross commercial exposure is two hundred twenty-four thousand,
+
+115
+00:10:13,708 --> 00:10:19,053
+five hundred dollars, unfulfilled customer orders mean the company avoids paying variable
+
+116
+00:10:19,053 --> 00:10:24,399
+inventory cost of goods sold and final-mile parcel shipping fees totaling ninety-four
+
+117
+00:10:24,399 --> 00:10:29,745
+thousand, six hundred fifty-five dollars and sixty-eight cents. Subtracting those avoided costs
+
+118
+00:10:29,745 --> 00:10:35,091
+reveals our true net contribution margin erosion: one hundred twenty-nine thousand, eight
+
+119
+00:10:35,091 --> 00:10:40,437
+hundred forty-four dollars and thirty-two cents. By spending thirty-nine thousand, nine hundred
+
+120
+00:10:40,437 --> 00:10:45,783
+ninety-seven dollars and fifty cents on our SCIP-optimized mitigation plan, we fully
+
+121
+00:10:45,783 --> 00:10:51,128
+protect this one hundred twenty-nine thousand, eight hundred forty-four dollars of contribution
+
+122
+00:10:51,128 --> 00:10:56,474
+margin—generating an immediate three point two five X return on invested working
+
+123
+00:10:56,474 --> 00:11:01,820
+capital. This level of clarity gives CFOs complete confidence in operational expenditures.
+
+124
+00:11:01,820 --> 00:11:07,642
+High-value algorithmic decisions cannot be deployed into production without governance. In the
+
+125
+00:11:07,642 --> 00:11:13,464
+Governance and Approval module, SARAS ATLAS enforces institutional accountability. Our corporate policy
+
+126
+00:11:13,464 --> 00:11:19,286
+establishes a twenty-five thousand dollar working-capital approval threshold. Because our optimized mitigation
+
+127
+00:11:19,286 --> 00:11:25,108
+outlay is thirty-nine thousand, nine hundred ninety-seven dollars and fifty cents, the
+
+128
+00:11:25,108 --> 00:11:30,930
+platform automatically triggers the Two-Man Rule. First, the Supply Chain Director reviews
+
+129
+00:11:30,930 --> 00:11:36,752
+the operational allocation and signs. But the order cannot execute until an
+
+130
+00:11:36,752 --> 00:11:42,574
+independent second officer—in this case, the VP of Finance—reviews the financial reconciliation
+
+131
+00:11:42,574 --> 00:11:48,396
+and countersigns. Each action is stamped with an immutable, auditable log including
+
+132
+00:11:48,396 --> 00:11:54,218
+timestamps, role-based access verification, and cryptographic SHA-256 digital signature hashes. Algorithms recommend;
+
+133
+00:11:54,218 --> 00:12:00,040
+human leaders govern.
+
+134
+00:12:00,040 --> 00:12:05,351
+Finally, the Executive Reporting module bridges technical optimization and boardroom communication. With
+
+135
+00:12:05,351 --> 00:12:10,663
+a single click, operators can generate executive-ready PDF briefs and CSV audit
+
+136
+00:12:10,663 --> 00:12:15,974
+packages. The generated PDF contains the full disruption summary, root-cause loss breakdown,
+
+137
+00:12:15,974 --> 00:12:21,286
+reconciled financial waterfall, mathematical solver parameters, and the countersigned governance audit trail.
+
+138
+00:12:21,286 --> 00:12:26,597
+Perfect parity between the web dashboard, PDF exports, and raw CSV files
+
+139
+00:12:26,597 --> 00:12:31,909
+guarantees that leadership, finance, and logistics operate on a single source of
+
+140
+00:12:31,909 --> 00:12:37,220
+truth.
+
+141
+00:12:37,220 --> 00:12:43,788
+So, what truly sets SARAS ATLAS apart from conventional enterprise dashboards? Most
+
+142
+00:12:43,788 --> 00:12:50,357
+business intelligence tools are purely descriptive: they look in the rearview mirror
+
+143
+00:12:50,357 --> 00:12:56,925
+and tell you what broke. SARAS ATLAS provides an end-to-end prescriptive decision
+
+144
+00:12:56,925 --> 00:13:03,493
+loop. We differentiate across seven core engineering pillars: One: Unified Decision Workflow—connecting
+
+145
+00:13:03,493 --> 00:13:10,062
+monitoring, root-cause analysis, simulation, and execution into one continuous thread. Two: Financially
+
+146
+00:13:10,062 --> 00:13:16,630
+Grounded Metrics—translating disruptions into gross exposure, avoided costs, and net contribution margin.
+
+147
+00:13:16,630 --> 00:13:23,198
+Three: Constrained Mathematical Optimization—using Mixed-Integer Linear Programming to guarantee optimality under physical
+
+148
+00:13:23,198 --> 00:13:29,767
+and capital limits. Four: Algorithmic Explainability—making solver choices clear with shadow prices
+
+149
+00:13:29,767 --> 00:13:36,335
+and marginal efficiency rankings. Five: Institutional Governance—automated Two-Man Rule dual approvals under
+
+150
+00:13:36,335 --> 00:13:42,903
+corporate limits. Six: Executive Communication—instant parity across dashboards, PDFs, and CSVs. And
+
+151
+00:13:42,903 --> 00:13:49,472
+Seven: End-to-End Systems Engineering—a modern, tightly integrated full-stack architecture that operates with
+
+152
+00:13:49,472 --> 00:13:56,040
+complete resource efficiency.
+
+153
+00:13:56,040 --> 00:14:01,704
+Let us look under the hood at the technical architecture. SARAS ATLAS
+
+154
+00:14:01,704 --> 00:14:07,367
+is engineered as an in-process modular monolith, prioritizing operational simplicity, zero network
+
+155
+00:14:07,367 --> 00:14:13,031
+serialization latency between services, and strict resource efficiency. On the frontend, we
+
+156
+00:14:13,031 --> 00:14:18,695
+utilize Next.js fifteen with the React nineteen App Router and TypeScript, styled
+
+157
+00:14:18,695 --> 00:14:24,359
+with Tailwind CSS. The UI runs on Vercel's Edge Network, where reverse-proxy
+
+158
+00:14:24,359 --> 00:14:30,022
+rewrite rules route all API traffic through a single origin, completely eliminating
+
+159
+00:14:30,022 --> 00:14:35,686
+cross-origin resource sharing overhead and browser preflight latencies. On the backend, we
+
+160
+00:14:35,686 --> 00:14:41,350
+run Python 3.12 and FastAPI, with Pydantic version two providing strict schema
+
+161
+00:14:41,350 --> 00:14:47,014
+validation. For storage, we use SQLite in Write-Ahead Logging mode for zero-latency
+
+162
+00:14:47,014 --> 00:14:52,678
+concurrent transactional reads and writes, paired with DuckDB for lightning-fast columnar analytical
+
+163
+00:14:52,678 --> 00:14:58,341
+queries on synthetic order logs. The optimization core leverages Google OR-Tools binding
+
+164
+00:14:58,341 --> 00:15:04,005
+the SCIP solver, delivering integer optimal solutions in under fifteen milliseconds. Forecasting
+
+165
+00:15:04,005 --> 00:15:09,669
+utilizes NumPy and Scikit-Learn for regularized regression and smoothing. Remarkably, this entire
+
+166
+00:15:09,669 --> 00:15:15,332
+backend—including database, solver, and API layers—operates with a memory footprint of just
+
+167
+00:15:15,332 --> 00:15:20,996
+fifty megabytes of RAM, comfortably under our three hundred fifty megabyte budget
+
+168
+00:15:20,996 --> 00:15:26,660
+and running on a strict zero-dollar cloud tier.
+
+169
+00:15:26,660 --> 00:15:32,165
+What is the tangible business value of this platform to an executive?
+
+170
+00:15:32,165 --> 00:15:37,669
+In traditional retail organizations, diagnosing a supplier delay and coordinating mitigation across
+
+171
+00:15:37,669 --> 00:15:43,174
+supply chain, merchandising, marketing, and finance takes between three and five days
+
+172
+00:15:43,174 --> 00:15:48,678
+of email chains and spreadsheet reconciliations. By the time leadership agrees on
+
+173
+00:15:48,678 --> 00:15:54,183
+an air-freight budget, stockouts have already occurred. SARAS ATLAS compresses that multi-day
+
+174
+00:15:54,183 --> 00:15:59,687
+decision cycle into less than ten minutes: Risk is detected twenty-one days
+
+175
+00:15:59,687 --> 00:16:05,192
+before arrival. Financial exposure is quantified with exact margin precision. Mitigation is
+
+176
+00:16:05,192 --> 00:16:10,696
+optimized to maximize capital efficiency—delivering a three point two five X return
+
+177
+00:16:10,696 --> 00:16:16,201
+on invested working capital. And governance approvals are completed digitally with a
+
+178
+00:16:16,201 --> 00:16:21,705
+permanent audit trail. In an industry where operating margins are fiercely contested,
+
+179
+00:16:21,705 --> 00:16:27,210
+transforming reactive fire-fighting into proactive decision intelligence is the ultimate competitive advantage.
+
+180
+00:16:27,210 --> 00:16:33,220
+SARAS ATLAS is an independently architected and implemented portfolio project. Every component
+
+181
+00:16:33,220 --> 00:16:39,230
+you have seen today—from the Next.js frontend and responsive visualization components, to
+
+182
+00:16:39,230 --> 00:16:45,240
+the FastAPI backend, the SCIP mathematical formulation, the financial waterfall algorithms, the
+
+183
+00:16:45,240 --> 00:16:51,250
+synthetic data generator, and the cloud deployment pipeline—was built from the ground
+
+184
+00:16:51,250 --> 00:16:57,260
+up to demonstrate production-grade software craftsmanship. It reflects my conviction that data
+
+185
+00:16:57,260 --> 00:17:03,270
+science and artificial intelligence achieve their greatest value when they are not
+
+186
+00:17:03,270 --> 00:17:09,280
+kept in isolated research notebooks, but embedded directly into robust, beautifully engineered
+
+187
+00:17:09,280 --> 00:17:15,290
+software that empowers human leaders to make superior decisions. SARAS ATLAS demonstrates
+
+188
+00:17:15,290 --> 00:17:21,300
+how data engineering, analytics, mathematical optimization, and software engineering can come together
+
+189
+00:17:21,300 --> 00:17:27,310
+to support better operational decisions. You can explore the live application at
+
+190
+00:17:27,310 --> 00:17:33,320
+saras-atlas.vercel.app, or inspect the open-source codebase, test suites, and technical documentation on
+
+191
+00:17:33,320 --> 00:17:39,330
+GitHub at github.com/Srikanthbanoth7533/saras-atlas. Thank you very much for your time and consideration.

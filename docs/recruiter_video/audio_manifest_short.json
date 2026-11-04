@@ -1,0 +1,47 @@
+[
+  {
+    "id": "short_01",
+    "title": "Hook & Executive Overview",
+    "text": "Hi, I am Srikanth Banoth, and this is SARAS ATLAS\u2014a commerce resilience and decision intelligence platform that turns supply chain disruptions into mathematically optimized, financially reconciled decisions.",
+    "audio_path": "C:\\Users\\DELL\\saras-atlas\\docs\\recruiter_video\\audio\\short_01.mp3",
+    "duration": 13.66,
+    "start_time": 0.0,
+    "end_time": 13.66
+  },
+  {
+    "id": "short_02",
+    "title": "Disruption & Root Cause Analysis",
+    "text": "In our synthetic scenario, a twenty-one-day supplier delay threatens five thousand units of inventory. Rather than just reporting lost sales, ATLAS decomposes our total two hundred twenty-four thousand, five hundred dollar gross exposure into five distinct root causes\u2014including maritime surcharges, cross-zone shipping spillovers, and wasted digital ad burn.",
+    "audio_path": "C:\\Users\\DELL\\saras-atlas\\docs\\recruiter_video\\audio\\short_02.mp3",
+    "duration": 22.9,
+    "start_time": 13.66,
+    "end_time": 36.56
+  },
+  {
+    "id": "short_03",
+    "title": "SCIP Optimization Engine",
+    "text": "To mitigate the crisis, we formulate a Mixed-Integer Linear Program solved with Google OR-Tools and SCIP. Under a strict forty thousand dollar capital budget, the solver proves the optimal policy: exhaust eight hundred units of cheap ground transfer, allocate two thousand nine hundred ninety-five units of air freight, and retain full ad velocity, investing thirty-nine thousand, nine hundred ninety-seven dollars and fifty cents with just two dollars and fifty cents in budget slack.",
+    "audio_path": "C:\\Users\\DELL\\saras-atlas\\docs\\recruiter_video\\audio\\short_03.mp3",
+    "duration": 28.8,
+    "start_time": 36.56,
+    "end_time": 65.36
+  },
+  {
+    "id": "short_04",
+    "title": "Financial Waterfall & Two-Man Governance",
+    "text": "Our financial waterfall reconciles gross revenue against ninety-four thousand, six hundred dollars of avoided variable costs, protecting one hundred twenty-nine thousand, eight hundred forty-four dollars of true net contribution margin\u2014a three point two five X ROI. And because capital exceeds twenty-five thousand dollars, our Two-Man Rule requires cryptographic dual-officer sign-off before execution.",
+    "audio_path": "C:\\Users\\DELL\\saras-atlas\\docs\\recruiter_video\\audio\\short_04.mp3",
+    "duration": 24.79,
+    "start_time": 65.36,
+    "end_time": 90.15
+  },
+  {
+    "id": "short_05",
+    "title": "Architecture & Closing",
+    "text": "Built with Next.js fifteen, FastAPI, DuckDB, SQLite WAL, and OR-Tools, the entire backend runs on less than fifty megabytes of RAM. Check out the live application at saras-atlas.vercel.app or inspect the open-source codebase on GitHub. Thank you!",
+    "audio_path": "C:\\Users\\DELL\\saras-atlas\\docs\\recruiter_video\\audio\\short_05.mp3",
+    "duration": 20.42,
+    "start_time": 90.15,
+    "end_time": 110.57
+  }
+]
