@@ -155,3 +155,15 @@
 | **T-AUDIT.1.8** | Limitations & Scale-out | Architecture boundaries, SQLite WAL single-writer, piecewise linear MILP | Senior Arch | **DONE** | `FINAL_KNOWN_LIMITATIONS.md` |
 | **T-AUDIT.1.9** | Final Project Sign-Off | Status updates, test results aggregation, ₹0 cost verification, Git commit | Program Mgr | **DONE** | `PROJECT_STATUS.md`, `TEST_RESULTS.md` |
 
+
+---
+
+## Phase 8.1 Work Breakdown Structure (WBS) & Tracking (COMPLETED)
+
+| Task ID | Task Category | Description | Owner | Status | Validation Artifact |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **T8.1.1** | Financial Reconciliation | Demarcate $224,500.00 gross commercial shock vs $129,844.32 GAAP net CM loss | Finance Eng | **DONE** | `FINANCIAL_CONSISTENCY_REPORT.md`, `PHASE_8_1_MASTER_COMPLETION_REPORT.md` |
+| **T8.1.2** | Loss Deconstruction | Verify all 5 RCA loss segments summing to exactly $224,500.00 and 100.0% | Quantitative | **DONE** | `src/domain/rca/tracer.py`, `test_phase4_intelligence.py` |
+| **T8.1.3** | SCIP Optimization | Validate algebraic MILP formulation, Big-M MOQs, constraints, and 2.00 ms solve | AI/ML Eng | **DONE** | `src/domain/optimization/solver.py`, `test_milp_solver.py` |
+| **T8.1.4** | PDF & CSV Parity | Align Executive Reporting engine for 100% structural and numerical parity | Full Stack | **DONE** | `src/domain/reporting/generator.py`, `scripts/verify_pdf_csv_reconciliation.py` |
+| **T8.1.5** | Automated Testing | Run full test suite, numerical validation, and 14-step E2E business workflow | QA Eng | **DONE** | 33/33 Pytest passed, 9/9 Validation passed, 14/14 E2E steps passed |
